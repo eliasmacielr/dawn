@@ -2,10 +2,11 @@ const SCROLL_ANIMATION_TRIGGER_CLASSNAME = 'scroll-animation__trigger';
 const SCROLL_ANIMATION_ACTIVE_CLASSNAME = 'scroll-animation__trigger--active';
 
 function onIntersection(elements, observer) {
-  elements.forEach((element) => {
+  elements.forEach((element, index) => {
     if (element.isIntersecting) {
       const elementTarget = element.target;
       elementTarget.classList.add(SCROLL_ANIMATION_ACTIVE_CLASSNAME);
+      elementTarget.setAttribute('style', `--animation-order: ${index};`);
 
       observer.unobserve(elementTarget);
     }
