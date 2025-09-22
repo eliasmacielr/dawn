@@ -15,14 +15,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Invidia Performance Exhaust Systems",
+            "heading": "Shop All OLM Products",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Check out our ready to ship inventory",
+            "text": "Check Them Out Here!",
             "text_style": "body"
           }
         },
@@ -44,14 +44,14 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/invidia-homepage-banner-rsd-1715x450-2.jpg",
+        "image": "shopify://shop_images/olm-headlight-ftspeed-homepage-banner-1715x450.jpg",
         "image_overlay_opacity": 40,
         "image_height": "adapt",
         "image_behavior": "none",
         "desktop_content_position": "bottom-left",
         "desktop_content_alignment": "left",
         "show_text_box": false,
-        "color_scheme": "scheme-e700d056-7567-4d91-8abb-a473b8b4003c",
+        "color_scheme": "scheme-0115fe1b-3a26-4dff-a589-da23c32b49aa",
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "left",
         "show_text_below": false
@@ -74,72 +74,55 @@
         "category_cmMqEg": {
           "type": "category",
           "settings": {
-            "collection": "engine",
-            "featured_image": "shopify://shop_images/engine-rsd-shop-by-category-image-305x150-2.jpg",
-            "subcategories": "Exhausts, Engine Management, Air Induction, Turbochargers and Superchargers"
+            "collection": "engine"
           }
         },
         "category_mBaFDf": {
           "type": "category",
           "settings": {
-            "collection": "suspension",
-            "featured_image": "shopify://shop_images/suspension-rsd-shop-by-category-image-305x150-2.jpg",
-            "subcategories": "Chassis Bracing, Steering, Suspension Bushings, Suspension Height Adjustment"
+            "collection": "suspension"
           }
         },
         "category_9Nyx33": {
           "type": "category",
           "settings": {
-            "collection": "brakes",
-            "featured_image": "shopify://shop_images/brakes-rallysport-shop-by-category-image-305x150.jpg",
-            "subcategories": "Brake Kits, Brake Pads, Brake Rotors, Brake System"
+            "collection": "brakes"
           }
         },
         "category_t8Tp3j": {
           "type": "category",
           "settings": {
-            "collection": "drivetrain",
-            "featured_image": "shopify://shop_images/drivetrain-rsd-shop-by-category-image-305x150-2.jpg",
-            "subcategories": "Brake Kits, Brake Pads, Brake Rotors, Brake System"
+            "collection": "drivetrain"
           }
         },
         "category_AzwPLU": {
           "type": "category",
           "settings": {
-            "collection": "interior",
-            "featured_image": "shopify://shop_images/interior-rallysport-shop-by-category-image-305x150.jpg",
-            "subcategories": "Axles and Driveshafts, Clutches, Differentials, Drivetrain Mounts and Bushings"
+            "collection": "interior"
           }
         },
         "category_dpAgdi": {
           "type": "category",
           "settings": {
-            "collection": "exterior",
-            "featured_image": "shopify://shop_images/exterior-rsd-shop-by-category-image-305x150-2.jpg",
-            "subcategories": "Gauges, Interior Trim and Accessories, Seats, Seat Harnesses and Accessories"
+            "collection": "exterior"
           }
         },
         "category_a6gwUD": {
           "type": "category",
           "settings": {
-            "collection": "lifestyle",
-            "featured_image": "shopify://shop_images/lifestyle-rallysport-shop-by-category-image-305x150_1.jpg",
-            "subcategories": "Aero, Body Components, Bumpers, Exterior Accessories"
+            "collection": "lifestyle"
           }
         },
         "category_kNJKDK": {
           "type": "category",
           "settings": {
-            "collection": "wheels-and-tires",
-            "featured_image": "shopify://shop_images/wheels-and-tires-rsd-shop-by-category-image-305x150-2.jpg",
-            "subcategories": "Brand Merchandise, Safety Gear, Vehicle Care, Lifestyle Package Deals"
+            "collection": "wheels-and-tires"
           }
         },
         "category_ErhUfD": {
           "type": "category",
           "settings": {
-            "collection": "",
-            "subcategories": "Wheels & Accessories"
+            "collection": ""
           }
         }
       },
@@ -183,7 +166,6 @@
           "settings": {
             "collection": "",
             "custom_url": "",
-            "custom_image": "shopify://shop_images/grimmspeed-jb400-614x306-rsd.jpg",
             "title": "GrimmSpeed BB500 Turbo",
             "subtitle": "In Stock NOW",
             "button_text": "Shop Now"
@@ -194,7 +176,6 @@
           "settings": {
             "collection": "",
             "custom_url": "",
-            "custom_image": "shopify://shop_images/factionfab-homepage-banners-614x306-rsd.jpg",
             "title": "FactionFab",
             "subtitle": "Shop All FactionFab Parts",
             "button_text": "Shop Now"
@@ -205,7 +186,6 @@
           "settings": {
             "collection": "",
             "custom_url": "",
-            "custom_image": "shopify://shop_images/olm-evolution-taillights-homepage-banners-614x306-rsd.jpg",
             "title": "OLM Evolution Taillights",
             "subtitle": "Upgrade Them Here!",
             "button_text": "Shop Now"
@@ -216,7 +196,6 @@
           "settings": {
             "collection": "",
             "custom_url": "",
-            "custom_image": "shopify://shop_images/iag-performance-homepage-banners-614x306-rsd.jpg",
             "title": "IAG Performance",
             "subtitle": "Shop IAG Performance",
             "button_text": "Shop Now"
@@ -272,7 +251,6 @@
       ],
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/cobb-10.4--off-sale-rsd-1715x450.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
