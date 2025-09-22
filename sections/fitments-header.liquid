@@ -147,15 +147,92 @@
       endif
     -%}
 
-    {%- liquid
-      if section.settings.menu != blank
-        if section.settings.menu_type_desktop == 'dropdown'
-          render 'header-dropdown-menu'
-        elsif section.settings.menu_type_desktop != 'drawer'
-          render 'header-mega-menu'
-        endif
-      endif
-    %}
+    <nav class="header__inline-menu">
+      <ul class="list-menu list-menu--inline" role="list">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'link_list' -%}
+              {%- assign link = block.settings.menu -%}
+              <header-menu>
+                <details id="Details-HeaderMenu-{{ forloop.index }}">
+                  <summary
+                    id="HeaderMenu-{{ link.handle }}"
+                    class="header__menu-item list-menu__item link focus-inset"
+                  >
+                    <img
+                      src="{{ block.settings.image | image_url: width: 50, height: 50, crop: 'center' }}"
+                      alt="{{ block.settings.heading }}"
+                      style="max-width: 50px; max-height: 50px; margin-right: 10px;"
+                      width="50"
+                      height="50"
+                    >
+                    <span
+                      {%- if link.child_active %}
+                        class="header__active-menu-item"
+                      {% endif %}
+                    >
+                      {{- link.title | escape -}}
+                    </span>
+                    {{- 'icon-caret.svg' | inline_asset_content -}}
+                  </summary>
+                  <ul
+                    id="HeaderMenu-MenuList-{{ forloop.index }}"
+                    class="header__submenu list-menu list-menu--disclosure color-{{ section.settings.menu_color_scheme }} gradient caption-large motion-reduce global-settings-popup"
+                    role="list"
+                    tabindex="-1"
+                  >
+                    {%- for childlink in link.links -%}
+                      <li>
+                        {%- if childlink.links == blank -%}
+                          <a
+                            id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                            href="{{ childlink.url }}"
+                            class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
+                            {% if childlink.current %}
+                              aria-current="page"
+                            {% endif %}
+                          >
+                            {{ childlink.title | escape }}
+                          </a>
+                        {%- else -%}
+                          <details id="Details-HeaderSubMenu-{{ link.handle }}-{{ childlink.handle }}">
+                            <summary
+                              id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                              class="header__menu-item link link--text list-menu__item focus-inset caption-large"
+                            >
+                              <span>{{ childlink.title | escape }}</span>
+                              {{- 'icon-caret.svg' | inline_asset_content -}}
+                            </summary>
+                            <ul
+                              id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                              class="header__submenu list-menu motion-reduce"
+                            >
+                              {%- for grandchildlink in childlink.links -%}
+                                <li>
+                                  <a
+                                    id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                    href="{{ grandchildlink.url }}"
+                                    class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
+                                    {% if grandchildlink.current %}
+                                      aria-current="page"
+                                    {% endif %}
+                                  >
+                                    {{ grandchildlink.title | escape }}
+                                  </a>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          </details>
+                        {%- endif -%}
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </details>
+              </header-menu>
+          {%- endcase -%}
+        {%- endfor -%}
+      </ul>
+    </nav>
   </header>
 </{{ header_tag }}>
 
@@ -324,7 +401,32 @@
 {
   "name": "t:sections.fitments-header.name",
   "class": "section-fitments-header",
-  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "t:sections.footer.blocks.link_list.settings.heading.default",
+          "label": "t:sections.footer.blocks.link_list.settings.heading.label"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label"
+        }
+      ],
+      "limit": 5
+    }
+  ],
   "settings": [
     {
       "type": "select",
@@ -507,11 +609,6 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 20
-    }
-  ],
-  "blocks": [
-    {
-      "type": "@app"
     }
   ]
 }
