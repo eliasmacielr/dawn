@@ -186,7 +186,7 @@
                         {%- if childlink.links == blank -%}
                           <a
                             id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                            href="{{ childlink.url }}"
+                            href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ childlink.url }}"
                             class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
                             {% if childlink.current %}
                               aria-current="page"
@@ -211,7 +211,7 @@
                                 <li>
                                   <a
                                     id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                    href="{{ grandchildlink.url }}"
+                                    href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ grandchildlink.url }}"
                                     class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
                                     {% if grandchildlink.current %}
                                       aria-current="page"
@@ -428,6 +428,12 @@
     }
   ],
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "use_apps_prefix",
+      "label": "Use apps prefix",
+      "default": true
+    },
     {
       "type": "select",
       "id": "logo_position",
