@@ -166,6 +166,7 @@
           "settings": {
             "collection": "",
             "custom_url": "",
+            "custom_image": "shopify://shop_images/factionfab-coilovers-ftspeed-614x306.jpg",
             "title": "GrimmSpeed BB500 Turbo",
             "subtitle": "In Stock NOW",
             "button_text": "Shop Now"
@@ -176,6 +177,7 @@
           "settings": {
             "collection": "",
             "custom_url": "",
+            "custom_image": "shopify://shop_images/alpharexft.jpg",
             "title": "FactionFab",
             "subtitle": "Shop All FactionFab Parts",
             "button_text": "Shop Now"
@@ -186,6 +188,7 @@
           "settings": {
             "collection": "",
             "custom_url": "",
+            "custom_image": "shopify://shop_images/clearance-homepage-graphics-ftspeed-614x306_e8584b0a-06e2-46db-b61c-28cf58d8506d.jpg",
             "title": "OLM Evolution Taillights",
             "subtitle": "Upgrade Them Here!",
             "button_text": "Shop Now"
@@ -196,6 +199,7 @@
           "settings": {
             "collection": "",
             "custom_url": "",
+            "custom_image": "shopify://shop_images/super-saturday-2x-double-rewards-points-614x306-ftspeed.jpg",
             "title": "IAG Performance",
             "subtitle": "Shop IAG Performance",
             "button_text": "Shop Now"
