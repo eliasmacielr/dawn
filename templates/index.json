@@ -15,14 +15,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Shop All OLM Products",
+            "heading": "Invidia Performance Exhaust Systems",
             "heading_size": "h0"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "Check Them Out Here!",
+            "text": "Check out our ready to ship inventory",
             "text_style": "body"
           }
         },
@@ -44,14 +44,14 @@
         "button"
       ],
       "settings": {
-        "image": "shopify://shop_images/olm-headlight-ftspeed-homepage-banner-1715x450.jpg",
+        "image": "shopify://shop_images/invidia-homepage-banner-rsd-1715x450-2.jpg",
         "image_overlay_opacity": 40,
         "image_height": "adapt",
         "image_behavior": "none",
         "desktop_content_position": "bottom-left",
         "desktop_content_alignment": "left",
         "show_text_box": false,
-        "color_scheme": "scheme-0115fe1b-3a26-4dff-a589-da23c32b49aa",
+        "color_scheme": "scheme-e700d056-7567-4d91-8abb-a473b8b4003c",
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "left",
         "show_text_below": false
@@ -165,8 +165,8 @@
           "type": "showcase_item",
           "settings": {
             "collection": "",
-            "custom_url": "",
-            "custom_image": "shopify://shop_images/factionfab-coilovers-ftspeed-614x306.jpg",
+            "custom_url": "/products/grimmspeed-overtake-bb500-turbocharger-kit-2002-2014-subaru-wrx-2004-2021-sti-2005-2009-legacy-gt-outback-xt",
+            "custom_image": "shopify://shop_images/grimmspeed-jb400-614x306-rsd.jpg",
             "title": "GrimmSpeed BB500 Turbo",
             "subtitle": "In Stock NOW",
             "button_text": "Shop Now"
@@ -176,8 +176,8 @@
           "type": "showcase_item",
           "settings": {
             "collection": "",
-            "custom_url": "",
-            "custom_image": "shopify://shop_images/alpharexft.jpg",
+            "custom_url": "/search?q=factionfab&page=1&inventory=in-stock",
+            "custom_image": "shopify://shop_images/factionfab-homepage-banners-614x306-rsd.jpg",
             "title": "FactionFab",
             "subtitle": "Shop All FactionFab Parts",
             "button_text": "Shop Now"
@@ -187,8 +187,8 @@
           "type": "showcase_item",
           "settings": {
             "collection": "",
-            "custom_url": "",
-            "custom_image": "shopify://shop_images/clearance-homepage-graphics-ftspeed-614x306_e8584b0a-06e2-46db-b61c-28cf58d8506d.jpg",
+            "custom_url": "/search?q=olm%20evolution",
+            "custom_image": "shopify://shop_images/olm-evolution-taillights-homepage-banners-614x306-rsd.jpg",
             "title": "OLM Evolution Taillights",
             "subtitle": "Upgrade Them Here!",
             "button_text": "Shop Now"
@@ -198,8 +198,8 @@
           "type": "showcase_item",
           "settings": {
             "collection": "",
-            "custom_url": "",
-            "custom_image": "shopify://shop_images/super-saturday-2x-double-rewards-points-614x306-ftspeed.jpg",
+            "custom_url": "/search?q=iag+performance&page=1&inventory=in-stock",
+            "custom_image": "shopify://shop_images/iag-performance-homepage-banners-614x306-rsd.jpg",
             "title": "IAG Performance",
             "subtitle": "Shop IAG Performance",
             "button_text": "Shop Now"
