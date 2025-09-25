@@ -150,6 +150,7 @@
 }
 
 .footer-block__heading {
+  text-align: left;
   margin-bottom: 2rem;
   margin-top: 0;
   font-size: calc(var(--font-heading-scale) * 1.6rem);
