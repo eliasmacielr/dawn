@@ -40,6 +40,45 @@
     max-width: 33%;
   }
 
+  /* Mobile dropdown styles */
+  @media screen and (max-width: 749px) {
+    .footer-block--menu .footer-block__heading {
+      position: relative;
+      cursor: pointer;
+      display: flex;
+      justify-content: between;
+      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(var(--color-foreground), 0.1);
+    }
+
+    .footer-block--menu .footer-block__heading::after {
+      content: '+';
+      font-size: 1.5rem;
+      line-height: 1;
+      margin-left: auto;
+      transition: transform 0.3s ease;
+    }
+
+    .footer-block--menu.is-open .footer-block__heading::after {
+      transform: rotate(45deg);
+    }
+
+    .footer-block--menu .footer-block__details-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .footer-block--menu.is-open .footer-block__details-content {
+      max-height: 500px;
+    }
+
+    .footer-block--menu .footer-block__details-content ul {
+      padding-bottom: 1rem;
+    }
+  }
+
   @media screen and (max-width: 990px) {
     .footer__split-container {
       flex-direction: column;
@@ -58,6 +97,11 @@
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    /* Ensure dropdowns are open on desktop */
+    .footer-block--menu .footer-block__details-content {
+      max-height: none !important;
     }
   }
 {%- endstyle -%}
@@ -210,7 +254,14 @@
                   {% endif %}
                 >
                   {%- if block.settings.heading != blank -%}
-                    <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
+                    <h2
+                      class="footer-block__heading inline-richtext"
+                      {% if block.type == 'link_list' %}
+                        onclick="toggleFooterMenu(this)"
+                      {% endif %}
+                    >
+                      {{- block.settings.heading -}}
+                    </h2>
                   {%- endif -%}
 
                   {%- case block.type -%}
@@ -222,18 +273,20 @@
                       </div>
                     {%- when 'link_list' -%}
                       {%- if block.settings.menu != blank -%}
-                        <ul class="footer-block__details-content list-unstyled">
-                          {%- for link in block.settings.menu.links -%}
-                            <li>
-                              <a
-                                href="{{ link.url }}"
-                                class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
-                              >
-                                {{ link.title | escape }}
-                              </a>
-                            </li>
-                          {%- endfor -%}
-                        </ul>
+                        <div class="footer-block__details-content">
+                          <ul class="list-unstyled">
+                            {%- for link in block.settings.menu.links -%}
+                              <li>
+                                <a
+                                  href="{{ link.url }}"
+                                  class="link link--text list-menu__item list-menu__item--link{% if link.active %} list-menu__item--active{% endif %}"
+                                >
+                                  {{ link.title | escape }}
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        </div>
                       {%- endif -%}
                     {%- when 'brand_information' -%}
                       <div class="footer-block__brand-info">
@@ -367,6 +420,33 @@
     </div>
   </div>
 </footer>
+
+<script>
+  function toggleFooterMenu(element) {
+    // Only apply toggle functionality on mobile
+    if (window.innerWidth > 749) return;
+
+    const footerBlock = element.closest('.footer-block--menu');
+    footerBlock.classList.toggle('is-open');
+  }
+
+  // Ensure menus are open on desktop and closed on mobile by default
+  function handleFooterMenuResize() {
+    const menuBlocks = document.querySelectorAll('.footer-block--menu');
+
+    menuBlocks.forEach((block) => {
+      if (window.innerWidth > 749) {
+        block.classList.remove('is-open');
+      } else {
+        block.classList.remove('is-open');
+      }
+    });
+  }
+
+  // Run on load and resize
+  window.addEventListener('load', handleFooterMenuResize);
+  window.addEventListener('resize', handleFooterMenuResize);
+</script>
 
 {% schema %}
 {
