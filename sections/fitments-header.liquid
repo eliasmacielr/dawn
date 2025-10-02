@@ -92,7 +92,7 @@
   /* Header inline menu styles - full-screen background */
   .header__inline-menu {
     position: fixed !important; /* Use fixed to span full viewport */
-    top: 102px; /* Position below header */
+    top: var(--header-height); /* Position below header */
     left: 0;
     width: 100vw !important; /* Full viewport width */
     box-sizing: border-box;
@@ -142,7 +142,7 @@
     flex-wrap: nowrap !important;
     white-space: nowrap;
     position: fixed !important; /* Use fixed to span full viewport */
-    top: 152px; /* Position below header__inline-menu (header height + inline menu height) */
+    top: calc(var(--header-height) + 43px); /* Position below header__inline-menu (header height + inline menu height) */
     left: 0;
     width: 100vw !important; /* Full viewport width */
     box-sizing: border-box;
@@ -216,19 +216,6 @@
     overflow: hidden;
     text-overflow: ellipsis;
     box-sizing: border-box;
-  }
-
-  /* Nested submenu styles (vertical) */
-  .header__submenu .header__submenu {
-    flex-direction: column !important;
-    min-width: 200px;
-    width: auto;
-    max-width: none;
-    position: absolute !important; /* Nested submenus are absolute */
-    top: 100%; /* Below parent submenu item */
-    left: 0;
-    transform: none;
-    overflow-x: visible;
   }
 
   /* Ensure parent container allows overflow */
@@ -344,47 +331,16 @@
                     <div class="header__submenu__content">
                       {%- for childlink in link.links -%}
                         <li>
-                          {%- if childlink.links == blank -%}
-                            <a
-                              id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                              href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ childlink.url }}"
-                              class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
-                              {% if childlink.current %}
-                                aria-current="page"
-                              {% endif %}
-                            >
-                              {{ childlink.title | escape }}
-                            </a>
-                          {%- else -%}
-                            <details id="Details-HeaderSubMenu-{{ link.handle }}-{{ childlink.handle }}">
-                              <summary
-                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                                class="header__menu-item link link--text list-menu__item focus-inset caption-large"
-                              >
-                                <span>{{ childlink.title | escape }}</span>
-                                {{- 'icon-caret.svg' | inline_asset_content -}}
-                              </summary>
-                              <ul
-                                id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                class="header__submenu list-menu motion-reduce"
-                              >
-                                {%- for grandchildlink in childlink.links -%}
-                                  <li>
-                                    <a
-                                      id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
-                                      href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ grandchildlink.url }}"
-                                      class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
-                                      {% if grandchildlink.current %}
-                                        aria-current="page"
-                                      {% endif %}
-                                    >
-                                      {{ grandchildlink.title | escape }}
-                                    </a>
-                                  </li>
-                                {%- endfor -%}
-                              </ul>
-                            </details>
-                          {%- endif -%}
+                          <a
+                            id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                            href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ childlink.url }}"
+                            class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
+                            {% if childlink.current %}
+                              aria-current="page"
+                            {% endif %}
+                          >
+                            {{ childlink.title | escape }}
+                          </a>
                         </li>
                       {%- endfor -%}
                     </div>
