@@ -74,49 +74,57 @@
         "category_cmMqEg": {
           "type": "category",
           "settings": {
-            "collection": "engine"
+            "collection": "engine",
+            "featured_image": "shopify://shop_images/engine-rsd-shop-by-category-image-305x150-2_e1a4714e-439c-46e7-85c4-35b990fa4076.jpg"
           }
         },
         "category_mBaFDf": {
           "type": "category",
           "settings": {
-            "collection": "suspension"
+            "collection": "suspension",
+            "featured_image": "shopify://shop_images/suspension-rsd-shop-by-category-image-305x150-2_4dca0938-1171-497e-9c95-f1c10c42ee52.jpg"
           }
         },
         "category_9Nyx33": {
           "type": "category",
           "settings": {
-            "collection": "brakes"
+            "collection": "brakes",
+            "featured_image": "shopify://shop_images/brakes-rallysport-shop-by-category-image-305x150_bdcd9718-87ae-4f31-9f73-5820c031fd04.jpg"
           }
         },
         "category_t8Tp3j": {
           "type": "category",
           "settings": {
-            "collection": "drivetrain"
+            "collection": "drivetrain",
+            "featured_image": "shopify://shop_images/drivetrain-rsd-shop-by-category-image-305x150-2_9ec5d35e-5f18-4c7e-a3a2-06e140439987.jpg"
           }
         },
         "category_AzwPLU": {
           "type": "category",
           "settings": {
-            "collection": "interior"
+            "collection": "interior",
+            "featured_image": "shopify://shop_images/interior-rallysport-shop-by-category-image-305x150_ff3abe43-1a38-4a0e-b00a-2ef395f1d85d.jpg"
           }
         },
         "category_dpAgdi": {
           "type": "category",
           "settings": {
-            "collection": "exterior"
+            "collection": "exterior",
+            "featured_image": "shopify://shop_images/exterior-rsd-shop-by-category-image-305x150-2_5744ee54-689e-4441-b67d-1ea52a81f9f0.jpg"
           }
         },
         "category_a6gwUD": {
           "type": "category",
           "settings": {
-            "collection": "lifestyle"
+            "collection": "lifestyle",
+            "featured_image": "shopify://shop_images/lifestyle-rallysport-shop-by-category-image-305x150.jpg"
           }
         },
         "category_kNJKDK": {
           "type": "category",
           "settings": {
-            "collection": "wheels-and-tires"
+            "collection": "wheels-and-tires",
+            "featured_image": "shopify://shop_images/wheels-and-tires-rsd-shop-by-category-image-305x150-2_4e323fb9-8a14-4a29-9744-97d4b10f8d1c.jpg"
           }
         },
         "category_ErhUfD": {
