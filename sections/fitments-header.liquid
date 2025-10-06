@@ -89,149 +89,117 @@
     }
   }
 
-  /* Header inline menu styles - full-screen background */
+  /* Header inline menu */
   .header__inline-menu {
-    position: fixed !important; /* Use fixed to span full viewport */
-    top: var(--header-height); /* Position below header */
+    position: fixed !important;
+    top: 102px;
     left: 0;
-    width: 100vw !important; /* Full viewport width */
+    width: 100vw !important;
     box-sizing: border-box;
     overflow-x: auto !important;
     overflow-y: hidden !important;
     padding: 0px;
     gap: 10px;
-    background: #fff; /* Solid background */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Depth effect */
-    z-index: 999; /* Above submenu */
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
   }
 
-  /* Container for inline menu items to align content responsively */
   .header__inline-menu > ul {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    margin: 0 auto; /* Center content */
-    padding-left: var(--first-menu-item-offset, 0); /* Align with first menu item */
+    margin: 0 auto;
+    padding-left: var(--first-menu-item-offset, 0);
     width: 100%;
-    max-width: 1200px; /* Constrain content width on desktop */
+    max-width: 1200px;
   }
 
-  /* Responsive max-widths for inline menu content */
   @media screen and (max-width: 749px) {
     .header__inline-menu > ul {
-      max-width: 100%; /* Full width on mobile */
+      max-width: 100%;
     }
   }
-
   @media screen and (min-width: 750px) and (max-width: 989px) {
     .header__inline-menu > ul {
-      max-width: 700px; /* Max-width for tablet */
+      max-width: 700px;
     }
   }
-
   @media screen and (min-width: 990px) {
     .header__inline-menu > ul {
-      max-width: 1200px; /* Max-width for desktop */
+      max-width: 1200px;
     }
   }
 
-  /* Submenu styles - positioned below inline menu */
+  /* Submenu (segundo nivel) */
   .header__submenu {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
     white-space: nowrap;
-    position: fixed !important; /* Use fixed to span full viewport */
-    top: calc(var(--header-height) + 43px); /* Position below header__inline-menu (header height + inline menu height) */
+    position: fixed !important;
+    top: calc(var(--header-height) + 43px);
     left: 0;
-    width: 100vw !important; /* Full viewport width */
+    width: 100vw !important;
     box-sizing: border-box;
     overflow-x: auto !important;
     overflow-y: hidden !important;
     padding: 10px;
     gap: 10px;
-    background: #f8f8f8; /* Slightly different background for distinction */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Depth effect */
-    z-index: 998; /* Below header__inline-menu */
+    background: #f8f8f8;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 998;
   }
 
-  /* Container for submenu items to align content responsively */
   .header__submenu__content {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    margin: 0 auto; /* Center content */
-    padding-left: var(--first-menu-item-offset, 0); /* Align with first menu item */
+    margin: 0 auto;
+    padding-left: var(--first-menu-item-offset, 0);
     width: 100%;
-    max-width: 1200px; /* Constrain content width on desktop */
+    max-width: 1200px;
   }
 
-  /* Responsive max-widths for submenu content */
-  @media screen and (max-width: 749px) {
-    .header__submenu__content {
-      max-width: 100%; /* Full width on mobile */
-    }
-  }
-
-  @media screen and (min-width: 750px) and (max-width: 989px) {
-    .header__submenu__content {
-      max-width: 700px; /* Max-width for tablet */
-    }
-  }
-
-  @media screen and (min-width: 990px) {
-    .header__submenu__content {
-      max-width: 1200px; /* Max-width for desktop */
-    }
-  }
-
-  /* Submenu item styles */
+  /* Items de segundo nivel */
   .header__submenu > .header__submenu__content > li {
     flex: 0 0 auto;
     margin-right: 5px;
-    margin-bottom: 0;
     min-width: 60px;
-    max-width: 60px;
-    width: 60px;
-    height: 23px;
-  }
-
-  .header__submenu > .header__submenu__content > li:last-child {
-    border-right: none;
+    max-width: 120px;
+    height: 30px;
   }
 
   .header__submenu .header__menu-item {
-    padding: 0;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 60px;
-    height: 23px;
-    border: 1px solid #000000;
+    padding: 5px 10px;
+    border: 1px solid #000;
     border-radius: 6px;
     background: transparent;
     font-size: 12px;
-    line-height: 1;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    box-sizing: border-box;
+    white-space: nowrap;
+    cursor: pointer;
   }
 
-  /* Ensure parent container allows overflow */
-  .header {
-    position: relative;
-    overflow: visible;
+  /* Tercer nivel - subsección fija */
+  .header__third-submenu {
+    position: fixed;
+    top: calc(var(--header-height) + 90px); /* debajo del segundo nivel */
+    left: 0;
+    width: 100vw;
+    background: #eaeaea;
+    display: none;
+    padding: 10px;
+    z-index: 997;
   }
 
-  .header-wrapper {
-    overflow: visible;
+  .header__third-submenu .third-submenu-content {
+    display: none;
+    flex-direction: row;
+    gap: 15px;
   }
 
-  /* Ensure header-menu and details are positioned for submenu context */
-  header-menu,
-  details {
-    position: relative;
+  .header__third-submenu .third-submenu-content.active {
+    display: flex;
   }
 </style>
 
@@ -239,18 +207,13 @@
   .header {
     padding: {{ section.settings.padding_top | times: 0.5 | round: 0 }}px 3rem {{ section.settings.padding_bottom | times: 0.5 | round: 0 }}px 3rem;
   }
-
   .section-header {
-    position: sticky; /* This is for fixing a Safari z-index issue. PR #2147 */
+    position: sticky;
     margin-bottom: {{ section.settings.margin_bottom | times: 0.75 | round: 0 }}px;
   }
-
   @media screen and (min-width: 750px) {
-    .section-header {
-      margin-bottom: {{ section.settings.margin_bottom }}px;
-    }
+    .section-header { margin-bottom: {{ section.settings.margin_bottom }}px; }
   }
-
   @media screen and (min-width: 990px) {
     .header {
       padding-top: {{ section.settings.padding_top }}px;
@@ -331,22 +294,75 @@
                     <div class="header__submenu__content">
                       {%- for childlink in link.links -%}
                         <li>
-                          <a
-                            id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
-                            href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ childlink.url }}"
-                            class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
-                            {% if childlink.current %}
-                              aria-current="page"
-                            {% endif %}
-                          >
-                            {{ childlink.title | escape }}
-                          </a>
+                          {%- if childlink.links == blank -%}
+                            <a
+                              id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                              href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ childlink.url }}"
+                              class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if childlink.current %} list-menu__item--active{% endif %}"
+                              {% if childlink.current %}
+                                aria-current="page"
+                              {% endif %}
+                            >
+                              {{ childlink.title | escape }}
+                            </a>
+                          {%- else -%}
+                            <details id="Details-HeaderSubMenu-{{ link.handle }}-{{ childlink.handle }}">
+                              <summary
+                                id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
+                                class="header__menu-item link link--text list-menu__item focus-inset caption-large childlink-trigger"
+                                data-handle="{{ childlink.handle }}"
+                                role="button"
+                              >
+                                <span>{{ childlink.title | escape }}</span>
+                                {{- 'icon-caret.svg' | inline_asset_content -}}
+                              </summary>
+                              <ul
+                                id="HeaderMenu-SubMenuList-{{ link.handle }}-{{ childlink.handle }}"
+                                class="header__submenu list-menu motion-reduce"
+                              >
+                                {%- for grandchildlink in childlink.links -%}
+                                  <li>
+                                    <a
+                                      id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}-{{ grandchildlink.handle }}"
+                                      href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ grandchildlink.url }}"
+                                      class="header__menu-item list-menu__item link link--text focus-inset caption-large{% if grandchildlink.current %} list-menu__item--active{% endif %}"
+                                      {% if grandchildlink.current %}
+                                        aria-current="page"
+                                      {% endif %}
+                                    >
+                                      {{ grandchildlink.title | escape }}
+                                    </a>
+                                  </li>
+                                {%- endfor -%}
+                              </ul>
+                            </details>
+                          {%- endif -%}
                         </li>
                       {%- endfor -%}
                     </div>
                   </ul>
                 </details>
               </header-menu>
+
+              {%- comment -%} Nueva subsección dinámica para tercer nivel (por cada menú de bloque) {%- endcomment -%}
+              <div class="header__third-submenu" data-block-index="{{ forloop.index }}">
+                {%- for childlink in link.links -%}
+                  {%- if childlink.links != blank -%}
+                    <ul class="third-submenu-content" data-parent="{{ childlink.handle }}">
+                      {%- for grandchildlink in childlink.links -%}
+                        <li>
+                          <a
+                            href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ grandchildlink.url }}"
+                            class="header__menu-item list-menu__item link focus-inset caption-large"
+                          >
+                            {{ grandchildlink.title | escape }}
+                          </a>
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  {%- endif -%}
+                {%- endfor -%}
+              </div>
           {%- endcase -%}
         {%- endfor -%}
       </ul>
@@ -473,6 +489,97 @@
   }
 
   customElements.define('sticky-header', StickyHeader);
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Seleccionamos todos los triggers (segundo nivel) con data-handle
+    const triggers = document.querySelectorAll('.childlink-trigger');
+    // Para cada bloque de header (por si tienes varios bloques/menus) hay un contenedor .header__third-submenu
+    const thirdSubmenus = document.querySelectorAll('.header__third-submenu');
+
+    // Función util para ocultar todos los third-submenu y desactivar todos los grupos
+    function hideAllThird() {
+      thirdSubmenus.forEach((container) => {
+        container.style.display = 'none';
+        const groups = container.querySelectorAll('.third-submenu-content');
+        groups.forEach((g) => g.classList.remove('active'));
+      });
+    }
+
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('mouseenter', () => {
+        const handle = trigger.getAttribute('data-handle');
+
+        // Encontrar el contenedor third-submenu más cercano (por bloque). Buscamos hacia arriba hasta encontrar details > header-menu > ...
+        let parentDetails = trigger.closest('details');
+        let thirdContainer = null;
+        if (parentDetails) {
+          // El contenedor está después del details dentro del mismo header-menu; buscar el siguiente .header__third-submenu desde parentDetails
+          thirdContainer = parentDetails.parentElement.querySelector('.header__third-submenu');
+        }
+
+        if (!thirdContainer) {
+          // Fallback: usamos el primer third-submenu encontrado
+          thirdContainer = document.querySelector('.header__third-submenu');
+        }
+
+        if (!thirdContainer) return;
+
+        // Ocultamos los otros contenedores
+        hideAllThird();
+
+        thirdContainer.style.display = 'block';
+        const groups = thirdContainer.querySelectorAll('.third-submenu-content');
+        groups.forEach((group) => {
+          group.classList.toggle('active', group.getAttribute('data-parent') === handle);
+        });
+      });
+
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const handle = trigger.getAttribute('data-handle');
+
+        let parentDetails = trigger.closest('details');
+        let thirdContainer = null;
+        if (parentDetails) {
+          thirdContainer = parentDetails.parentElement.querySelector('.header__third-submenu');
+        }
+        if (!thirdContainer) thirdContainer = document.querySelector('.header__third-submenu');
+        if (!thirdContainer) return;
+
+        hideAllThird();
+        thirdContainer.style.display = 'block';
+        const groups = thirdContainer.querySelectorAll('.third-submenu-content');
+        groups.forEach((group) => {
+          group.classList.toggle('active', group.getAttribute('data-parent') === handle);
+        });
+      });
+    });
+
+    // Ocultar subsección al salir del área (por bloque)
+    thirdSubmenus.forEach((container) => {
+      container.addEventListener('mouseleave', () => {
+        container.style.display = 'none';
+        const groups = container.querySelectorAll('.third-submenu-content');
+        groups.forEach((g) => g.classList.remove('active'));
+      });
+    });
+
+    // Si el usuario hace mouseleave del submenu (segundo nivel) y no está sobre third-submenu, ocultar
+    const submenus = document.querySelectorAll('.header__submenu');
+    submenus.forEach((sub) => {
+      sub.addEventListener('mouseleave', (e) => {
+        // wait a short moment to allow mouseenter on third-submenu if user moved there
+        setTimeout(() => {
+          // si ningún third-submenu tiene :hover, ocultamos todos
+          let anyHover = false;
+          thirdSubmenus.forEach((c) => {
+            if (c.matches(':hover')) anyHover = true;
+          });
+          if (!anyHover) hideAllThird();
+        }, 150);
+      });
+    });
+  });
 {% endjavascript %}
 
 <script type="application/ld+json">
