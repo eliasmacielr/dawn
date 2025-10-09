@@ -192,14 +192,50 @@
     z-index: 997;
   }
 
+  .header__third-submenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
   .header__third-submenu .third-submenu-content {
     display: none;
-    flex-direction: row;
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    list-style: none !important;
+    padding: 20px 0;
   }
 
   .header__third-submenu .third-submenu-content.active {
+    display: grid;
+  }
+
+  .header__third-submenu .third-submenu-content li {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    list-style: none !important;
+  }
+
+  .header__third-submenu .third-submenu-content li img {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 4px;
+  }
+
+  .header__third-submenu .third-submenu-content li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .header__third-submenu .third-submenu-content li a:hover {
+    color: #000;
   }
 </style>
 
@@ -348,12 +384,21 @@
               <div class="header__third-submenu" data-block-index="{{ forloop.index }}">
                 {%- for childlink in link.links -%}
                   {%- if childlink.links != blank -%}
-                    <ul class="third-submenu-content" data-parent="{{ childlink.handle }}">
+                    <ul class="page-width third-submenu-content" data-parent="{{ childlink.handle }}">
                       {%- for grandchildlink in childlink.links -%}
+                        {%- assign image_key = 'third_image_' | append: forloop.index -%}
                         <li>
+                          <img
+                            src="{{ section.settings[image_key] | image_url: width: 54, height: 54, crop: 'center' }}"
+                            alt="{{ grandchildlink.title | escape }}"
+                            loading="lazy"
+                          >
                           <a
                             href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ grandchildlink.url }}"
                             class="header__menu-item list-menu__item link focus-inset caption-large"
+                            {% if grandchildlink.current %}
+                              aria-current="page"
+                            {% endif %}
                           >
                             {{ grandchildlink.title | escape }}
                           </a>
@@ -777,6 +822,55 @@
       "id": "menu_color_scheme",
       "label": "t:sections.header.settings.menu_color_scheme.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Third level images"
+    },
+    {
+      "type": "image_picker",
+      "id": "third_image_1",
+      "label": "Third level image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "third_image_2",
+      "label": "Third level image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "third_image_3",
+      "label": "Third level image 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "third_image_4",
+      "label": "Third level image 4"
+    },
+    {
+      "type": "image_picker",
+      "id": "third_image_5",
+      "label": "Third level image 5"
+    },
+    {
+      "type": "image_picker",
+      "id": "third_image_6",
+      "label": "Third level image 6"
+    },
+    {
+      "type": "image_picker",
+      "id": "third_image_7",
+      "label": "Third level image 7"
+    },
+    {
+      "type": "image_picker",
+      "id": "third_image_8",
+      "label": "Third level image 8"
+    },
+    {
+      "type": "image_picker",
+      "id": "third_image_9",
+      "label": "Third level image 9"
     },
     {
       "type": "header",
