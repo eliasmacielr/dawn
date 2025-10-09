@@ -29,7 +29,7 @@
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
-        "color_scheme": "scheme-2b6b47d3-34e5-4c0f-9ffe-5d7927d2a47d",
+        "color_scheme": "scheme-3",
         "show_line_separator": true,
         "show_social": false,
         "enable_country_selector": false,
@@ -46,7 +46,7 @@
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "always",
         "show_line_separator": true,
-        "color_scheme": "scheme-5",
+        "color_scheme": "scheme-4",
         "menu_color_scheme": "",
         "enable_country_selector": true,
         "enable_language_selector": true,
@@ -62,57 +62,50 @@
         "link_list_rUCCCa": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/dev-nav-subaru-sti.jpg",
             "heading": "Quick links",
-            "menu": "subaru-sti"
+            "menu": ""
           }
         },
         "link_list_c96J6m": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/dev-nav-subaru-wrx.jpg",
             "heading": "Quick links",
-            "menu": "subaru-wrx"
+            "menu": ""
           }
         },
         "link_list_Wy6nd9": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/dev-nav-subaru-brz.jpg",
             "heading": "Quick links",
-            "menu": "subaru-brz"
+            "menu": ""
           }
         },
         "link_list_C8dAPE": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/dev-nav-scion-frs.jpg",
             "heading": "Quick links",
-            "menu": "scion-frs"
+            "menu": ""
           }
         },
         "link_list_bhYGwn": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/dev-nav-toyota-86.jpg",
             "heading": "Quick links",
-            "menu": "toyota-86"
+            "menu": ""
           }
         },
         "link_list_8NdQPF": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/dev-nav-toyota-gr86.jpg",
             "heading": "Quick links",
-            "menu": "toyota-gr86"
+            "menu": ""
           }
         },
         "link_list_fFthea": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/honda_civic_type_r.png",
             "heading": "Quick links",
-            "menu": "honda-civic"
+            "menu": ""
           }
         }
       },
