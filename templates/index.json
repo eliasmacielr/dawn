@@ -194,6 +194,40 @@
         "padding_bottom": 60
       }
     },
+    "rich_text_armPRU": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Vcghka": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h1"
+          }
+        },
+        "text_WqApWN": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Toyota’s FT86 platform and iconic Supra A90 are excellent vehicles right off the showroom floor, but you can make both the <a href=\"https://www.ftspeed.com/fits/2022_subaru_brz\"><strong>2013-2020 Scion FR-S / Subaru BRZ / Toyota 86</strong></a><strong> , </strong><a href=\"https://www.ftspeed.com/fits/2020_toyota_supra\"><strong>2020-2022 Toyota GR Supra</strong></a><strong> and </strong><a href=\"https://www.ftspeed.com/fits/2019_toyota_86\"><strong>the all new 2022 GR86</strong></a> come alive with performance parts and accessories from FTSpeed! We carry everything you need to make your FT or Supra A90 stand out on the street or the track, including a ton of engine upgrades, suspension parts, and styling accessories to make your slick Toyota FT or Supra stand out from the rest of the crowd.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_Vcghka",
+        "text_WqApWN"
+      ],
+      "custom_css": [
+        "a {color: #eb0a1d;}"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "featured_collections_UwYTiM": {
       "type": "featured-collections",
       "blocks": {
@@ -315,6 +349,7 @@
     "featured_collections_3z3GjU",
     "featured_productsv2_dbFqgz",
     "shop_by_categories_efE7JY",
+    "rich_text_armPRU",
     "featured_collections_UwYTiM",
     "image_banner_HUfAiz",
     "featured_productsv2_iYT83w",
