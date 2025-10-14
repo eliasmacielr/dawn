@@ -32,14 +32,14 @@
           "type": "link_list",
           "settings": {
             "heading": "About Us",
-            "menu": "support-footer"
+            "menu": ""
           }
         },
         "link_list_wi49RP": {
           "type": "link_list",
           "settings": {
             "heading": "Legal & Compliance",
-            "menu": "legal-compliance"
+            "menu": ""
           }
         }
       },
