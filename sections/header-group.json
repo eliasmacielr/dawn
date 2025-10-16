@@ -41,7 +41,7 @@
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
-        "show_search_bar": false,
+        "show_search_bar": true,
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "always",
@@ -62,60 +62,31 @@
         "link_list_rUCCCa": {
           "type": "link_list",
           "settings": {
+            "image": "shopify://shop_images/wheels-and-accessories-ftspeed-shop-by-category-image-305x150-2.jpg",
             "heading": "Quick links",
-            "menu": ""
-          }
-        },
-        "link_list_c96J6m": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Quick links",
-            "menu": ""
-          }
-        },
-        "link_list_Wy6nd9": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Quick links",
-            "menu": ""
+            "menu": "scion-frs"
           }
         },
         "link_list_C8dAPE": {
           "type": "link_list",
           "settings": {
+            "image": "shopify://shop_images/category_lifestyle_rim_wash_closeup.png",
             "heading": "Quick links",
-            "menu": ""
-          }
-        },
-        "link_list_bhYGwn": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Quick links",
-            "menu": ""
-          }
-        },
-        "link_list_8NdQPF": {
-          "type": "link_list",
-          "settings": {
-            "heading": "Quick links",
-            "menu": ""
+            "menu": "toyota-86"
           }
         },
         "link_list_fFthea": {
           "type": "link_list",
           "settings": {
+            "image": "shopify://shop_images/exterior-ftspeed-shop-by-category-image-305x150-2.jpg",
             "heading": "Quick links",
-            "menu": ""
+            "menu": "toyota-gr86"
           }
         }
       },
       "block_order": [
         "link_list_rUCCCa",
-        "link_list_c96J6m",
-        "link_list_Wy6nd9",
         "link_list_C8dAPE",
-        "link_list_bhYGwn",
-        "link_list_8NdQPF",
         "link_list_fFthea"
       ],
       "settings": {
