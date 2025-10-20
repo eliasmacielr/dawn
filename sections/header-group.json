@@ -62,7 +62,7 @@
         "link_list_rUCCCa": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/wheels-and-accessories-ftspeed-shop-by-category-image-305x150-2.jpg",
+            "image": "shopify://shop_images/dev-nav-scion-frs_1.jpg",
             "heading": "Quick links",
             "menu": "scion-frs-1"
           }
@@ -70,7 +70,7 @@
         "link_list_C8dAPE": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/category_lifestyle_rim_wash_closeup.png",
+            "image": "shopify://shop_images/dev-nav-toyota-86_1.jpg",
             "heading": "Quick links",
             "menu": "toyota-86"
           }
@@ -78,16 +78,25 @@
         "link_list_fFthea": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/exterior-ftspeed-shop-by-category-image-305x150-2.jpg",
+            "image": "shopify://shop_images/dev-nav-toyota-gr86.jpg",
             "heading": "Quick links",
             "menu": "toyota-gr86"
+          }
+        },
+        "link_list_3b7ppY": {
+          "type": "link_list",
+          "settings": {
+            "image": "shopify://shop_images/dev-nav-subaru-wrx.jpg",
+            "heading": "Quick links",
+            "menu": "subaru-brz"
           }
         }
       },
       "block_order": [
         "link_list_rUCCCa",
         "link_list_C8dAPE",
-        "link_list_fFthea"
+        "link_list_fFthea",
+        "link_list_3b7ppY"
       ],
       "settings": {
         "use_apps_prefix": true,
