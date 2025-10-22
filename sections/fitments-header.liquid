@@ -186,17 +186,42 @@
     top: calc(var(--header-height) + 120px); /* debajo del segundo nivel */
     left: 0;
     width: 100vw;
-    background: #eaeaea;
+    background: #ffffff;
     display: none;
     padding: 10px;
     z-index: 997;
   }
 
+  .header__third-submenu .third-submenu-wrapper {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .header__third-submenu .third-submenu-sidebar {
+    flex: 0 0 15%;
+    padding: 20px 20px 20px 0;
+    box-sizing: border-box;
+  }
+
+  .header__third-submenu .third-submenu-sidebar img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .header__third-submenu .third-submenu-main {
+    flex: 1;
+    padding-left: 10px;
+    min-width: 0;
+  }
+
   .header__third-submenu ul {
     list-style: none;
     padding: 0;
-    margin: 0 auto;
-    max-width: 1200px;
+    margin: 0;
+    width: 100%;
   }
 
   .header__third-submenu .third-submenu-content {
@@ -213,9 +238,8 @@
 
   .header__third-submenu .third-submenu-content li {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    text-align: center;
     list-style: none !important;
   }
 
@@ -223,7 +247,7 @@
     width: 54px;
     height: 54px;
     object-fit: cover;
-    margin-bottom: 10px;
+    margin-right: 10px;
     border-radius: 4px;
   }
 
@@ -382,31 +406,44 @@
 
               {%- comment -%} Nueva subsección dinámica para tercer nivel (por cada menú de bloque) {%- endcomment -%}
               <div class="header__third-submenu" data-block-index="{{ forloop.index }}">
-                {%- for childlink in link.links -%}
-                  {%- if childlink.links != blank -%}
-                    <ul class="page-width third-submenu-content" data-parent="{{ childlink.handle }}">
-                      {%- for grandchildlink in childlink.links -%}
-                        {%- assign image_key = 'third_image_' | append: forloop.index -%}
-                        <li>
-                          <img
-                            src="{{ section.settings[image_key] | image_url: width: 54, height: 54, crop: 'center' }}"
-                            alt="{{ grandchildlink.title | escape }}"
-                            loading="lazy"
-                          >
-                          <a
-                            href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ grandchildlink.url }}"
-                            class="header__menu-item list-menu__item link focus-inset caption-large"
-                            {% if grandchildlink.current %}
-                              aria-current="page"
-                            {% endif %}
-                          >
-                            {{ grandchildlink.title | escape }}
-                          </a>
-                        </li>
-                      {%- endfor -%}
-                    </ul>
-                  {%- endif -%}
-                {%- endfor -%}
+                <div class="third-submenu-wrapper page-width">
+                  <div class="third-submenu-sidebar">
+                    {%- if block.settings.sidebar_image -%}
+                      <img
+                        src="{{ block.settings.sidebar_image | image_url: width: 300, height: 400, crop: 'center' }}"
+                        alt="{{ block.settings.heading | escape }} sidebar"
+                        loading="lazy"
+                      >
+                    {%- endif -%}
+                  </div>
+                  <div class="third-submenu-main">
+                    {%- for childlink in link.links -%}
+                      {%- if childlink.links != blank -%}
+                        <ul class="third-submenu-content" data-parent="{{ childlink.handle }}">
+                          {%- for grandchildlink in childlink.links -%}
+                            {%- assign image_key = 'third_image_' | append: forloop.index -%}
+                            <li>
+                              <img
+                                src="{{ section.settings[image_key] | image_url: width: 54, height: 54, crop: 'center' }}"
+                                alt="{{ grandchildlink.title | escape }}"
+                                loading="lazy"
+                              >
+                              <a
+                                href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ grandchildlink.url }}"
+                                class="header__menu-item list-menu__item link focus-inset caption-large"
+                                {% if grandchildlink.current %}
+                                  aria-current="page"
+                                {% endif %}
+                              >
+                                {{ grandchildlink.title | escape }}
+                              </a>
+                            </li>
+                          {%- endfor -%}
+                        </ul>
+                      {%- endif -%}
+                    {%- endfor -%}
+                  </div>
+                </div>
               </div>
           {%- endcase -%}
         {%- endfor -%}
@@ -692,6 +729,11 @@
           "id": "menu",
           "default": "footer",
           "label": "t:sections.footer.blocks.link_list.settings.menu.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "sidebar_image",
+          "label": "Third level sidebar image"
         }
       ],
       "limit": 8
