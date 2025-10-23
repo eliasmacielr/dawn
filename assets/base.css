@@ -2577,6 +2577,10 @@ input[type='checkbox'] {
 }
 
 @media screen and (max-width: 989px) {
+  .header__search-bar {
+    grid-column: 1/4;
+  }
+
   .header__heading,
   .header__heading-link {
     text-align: center;
