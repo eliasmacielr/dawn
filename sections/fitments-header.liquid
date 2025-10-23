@@ -591,16 +591,24 @@
       trigger.addEventListener('mouseenter', () => {
         const handle = trigger.getAttribute('data-handle');
 
-        // Encontrar el contenedor third-submenu más cercano (por bloque). Buscamos hacia arriba hasta encontrar details > header-menu > ...
-        let parentDetails = trigger.closest('details');
-        let thirdContainer = null;
-        if (parentDetails) {
-          // El contenedor está después del details dentro del mismo header-menu; buscar el siguiente .header__third-submenu desde parentDetails
-          thirdContainer = parentDetails.parentElement.querySelector('.header__third-submenu');
+        // Traverse up to the top-level details to get the block index from its ID
+        let topLevelDetails = trigger.closest('ul.header__submenu').parentElement;
+        let blockIndex = null;
+        if (topLevelDetails && topLevelDetails.id && topLevelDetails.id.startsWith('Details-HeaderMenu-')) {
+          const match = topLevelDetails.id.match(/Details-HeaderMenu-(\d+)/);
+          if (match) {
+            blockIndex = match[1];
+          }
         }
 
+        // Query the matching third-submenu by data-block-index
+        let thirdContainer = null;
+        if (blockIndex) {
+          thirdContainer = document.querySelector(`.header__third-submenu[data-block-index="${blockIndex}"]`);
+        }
+
+        // Fallback only if still null (edge case for single-block or malformed IDs)
         if (!thirdContainer) {
-          // Fallback: usamos el primer third-submenu encontrado
           thirdContainer = document.querySelector('.header__third-submenu');
         }
 
@@ -620,12 +628,23 @@
         e.preventDefault();
         const handle = trigger.getAttribute('data-handle');
 
-        let parentDetails = trigger.closest('details');
-        let thirdContainer = null;
-        if (parentDetails) {
-          thirdContainer = parentDetails.parentElement.querySelector('.header__third-submenu');
+        // Same traversal logic as above (duplicate for click handler)
+        let topLevelDetails = trigger.closest('ul.header__submenu').parentElement;
+        let blockIndex = null;
+        if (topLevelDetails && topLevelDetails.id && topLevelDetails.id.startsWith('Details-HeaderMenu-')) {
+          const match = topLevelDetails.id.match(/Details-HeaderMenu-(\d+)/);
+          if (match) {
+            blockIndex = match[1];
+          }
         }
-        if (!thirdContainer) thirdContainer = document.querySelector('.header__third-submenu');
+
+        let thirdContainer = null;
+        if (blockIndex) {
+          thirdContainer = document.querySelector(`.header__third-submenu[data-block-index="${blockIndex}"]`);
+        }
+        if (!thirdContainer) {
+          thirdContainer = document.querySelector('.header__third-submenu');
+        }
         if (!thirdContainer) return;
 
         hideAllThird();
