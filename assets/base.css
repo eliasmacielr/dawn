@@ -272,6 +272,7 @@ body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
   grid-auto-flow: column;
 }
 
+
 .page-margin,
 .shopify-challenge__container {
   margin: 7rem auto;
@@ -3712,5 +3713,11 @@ details-disclosure > details {
   }
   100% {
     transform: translateX(100%) scaleX(0);
+  }
+}
+
+@media screen and (max-width: 989px) {
+  .section-fitments-header .header-wrapper {
+    display: none;
   }
 }
