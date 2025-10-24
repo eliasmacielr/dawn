@@ -95,9 +95,10 @@
         "link_list_3b7ppY": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/dev-nav-subaru-wrx.jpg",
+            "image": "shopify://shop_images/dev-nav-subaru-brz.jpg",
             "heading": "Quick links",
-            "menu": "subaru-brz"
+            "menu": "subaru-brz",
+            "sidebar_image": "shopify://shop_images/dev-nav-subaru-brz.jpg"
           }
         }
       },
