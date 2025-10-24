@@ -88,7 +88,8 @@
           "settings": {
             "image": "shopify://shop_images/dev-nav-supra.jpg",
             "heading": "Quick links",
-            "menu": "toyota-supra"
+            "menu": "toyota-supra",
+            "sidebar_image": "shopify://shop_images/dev-nav-supra.jpg"
           }
         },
         "link_list_3b7ppY": {
