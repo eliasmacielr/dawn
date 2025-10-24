@@ -83,6 +83,14 @@
             "menu": "toyota-gr86"
           }
         },
+        "link_list_jYahdW": {
+          "type": "link_list",
+          "settings": {
+            "image": "shopify://shop_images/dev-nav-supra.jpg",
+            "heading": "Quick links",
+            "menu": "toyota-supra"
+          }
+        },
         "link_list_3b7ppY": {
           "type": "link_list",
           "settings": {
@@ -96,6 +104,7 @@
         "link_list_rUCCCa",
         "link_list_C8dAPE",
         "link_list_fFthea",
+        "link_list_jYahdW",
         "link_list_3b7ppY"
       ],
       "settings": {
