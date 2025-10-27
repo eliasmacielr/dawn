@@ -27,13 +27,18 @@
       {%- assign subcollection = nodes[subcollection_id] -%}
       <div class="collection-tree__child center">
         {%- if subcollection.i -%}
-          <img
-            src="{{ subcollection.i }}"
-            alt="{{ subcollection.t | escape }} image"
-            class="motion-reduce"
-            width="120"
-            height="120"
+          <a
+            href="{{ routes.collections_url }}/{{ collection.handle }}/{{ subcollection.h }}"
+            class="full-unstyled-link font-body-bold"
           >
+            <img
+              src="{{ subcollection.i }}"
+              alt="{{ subcollection.t | escape }} image"
+              class="motion-reduce"
+              width="120"
+              height="120"
+            >
+          </a>
         {%- endif -%}
         {%- unless collection_tree_value.parentChildren[subcollection_id] -%}
           <a

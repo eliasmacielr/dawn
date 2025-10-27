@@ -652,6 +652,7 @@ hr {
 .breadcrumbs .full-unstyled-link {
   display: inline;
   padding-left: 1rem;
+  white-space: wrap;
 }
 
 .placeholder {
