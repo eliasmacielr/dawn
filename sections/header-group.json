@@ -64,7 +64,8 @@
           "settings": {
             "image": "shopify://shop_images/dev-nav-scion-frs_1.jpg",
             "heading": "Quick links",
-            "menu": "scion-frs-1"
+            "menu": "scion-frs-1",
+            "sidebar_image": "shopify://shop_images/dev-nav-scion-frs_1.jpg"
           }
         },
         "link_list_C8dAPE": {
@@ -72,7 +73,8 @@
           "settings": {
             "image": "shopify://shop_images/dev-nav-toyota-86_1.jpg",
             "heading": "Quick links",
-            "menu": "toyota-86"
+            "menu": "toyota-86",
+            "sidebar_image": "shopify://shop_images/dev-nav-toyota-86_1.jpg"
           }
         },
         "link_list_fFthea": {
@@ -80,7 +82,8 @@
           "settings": {
             "image": "shopify://shop_images/dev-nav-toyota-gr86.jpg",
             "heading": "Quick links",
-            "menu": "toyota-gr86"
+            "menu": "toyota-gr86",
+            "sidebar_image": "shopify://shop_images/dev-nav-toyota-gr86.jpg"
           }
         },
         "link_list_jYahdW": {
