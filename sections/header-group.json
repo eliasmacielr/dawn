@@ -110,7 +110,7 @@
         "link_list_3b7ppY"
       ],
       "settings": {
-        "use_apps_prefix": true,
+        "use_apps_prefix": false,
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
         "show_search_bar": false,
