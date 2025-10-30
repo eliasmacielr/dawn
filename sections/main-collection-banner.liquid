@@ -60,10 +60,10 @@
     {%- assign level_2_collection = collection.metafields.custom.level_2.value -%}
     <div class="breadcrumbs">
       <a href="/collections" class="full-unstyled-link">Collections</a> /
-      {%- if level_1_collection -%}
+      {%- if level_1_collection != blank -%}
         <a href="{{ level_1_collection.url }}" class="full-unstyled-link">{{ level_1_collection.title }}</a> /
       {%- endif -%}
-      {%- if level_2_collection -%}
+      {%- if level_2_collection != blank -%}
         <a href="{{ level_2_collection.url }}" class="full-unstyled-link">{{ level_2_collection.title }}</a> /
       {%- endif -%}
       <a href="{{ collection.url }}" class="full-unstyled-link">{{ collection.title }}</a>

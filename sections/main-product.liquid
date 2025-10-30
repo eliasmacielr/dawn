@@ -104,9 +104,19 @@
           {%- assign level_1_collection = product_collection.metafields.custom.level_1.value -%}
           {%- assign level_2_collection = product_collection.metafields.custom.level_2.value -%}
           <div class="breadcrumbs">
-            <a href="{{ level_1_collection.url }}" class="full-unstyled-link">{{ level_1_collection.title }}</a> /
-            <a href="{{ level_2_collection.url }}" class="full-unstyled-link">{{ level_2_collection.title }}</a> /
-            <a href="{{ product_collection.url }}" class="full-unstyled-link">{{ product_collection.title }}</a>
+            {%- if level_1_collection != blank -%}
+              <a href="{{ level_1_collection.url }}" class="full-unstyled-link">{{ level_1_collection.title }} </a>
+              {%- if level_2_collection != blank or product_collection != blank -%}/{%- endif -%}
+            {%- endif -%}
+
+            {%- if level_2_collection != blank -%}
+              <a href="{{ level_2_collection.url }}" class="full-unstyled-link">{{ level_2_collection.title }}</a>
+              {%- if product_collection != blank -%}/{%- endif -%}
+            {%- endif -%}
+
+            {%- if product_collection != blank -%}
+              <a href="{{ product_collection.url }}" class="full-unstyled-link">{{ product_collection.title }}</a>
+            {%- endif -%}
           </div>
           {%- break -%}
         {%- endif -%}
@@ -2002,7 +2012,7 @@
               "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__44.label"
             }
           ],
-          "default": "return",
+          "default": "truck",
           "label": "t:sections.main-product.blocks.icon_with_text.settings.icon_2.label"
         },
         {
