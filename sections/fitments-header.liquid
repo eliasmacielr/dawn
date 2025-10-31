@@ -179,6 +179,11 @@
     cursor: pointer;
   }
 
+  .header__submenu .childlink-trigger.active {
+    background-color: #eb0a1d;
+    color: #fff;
+  }
+
   /* Tercer nivel - subsección fija */
   .header__third-submenu {
     position: fixed;
@@ -577,13 +582,15 @@
     // Para cada bloque de header (por si tienes varios bloques/menus) hay un contenedor .header__third-submenu
     const thirdSubmenus = document.querySelectorAll('.header__third-submenu');
 
-    // Función util para ocultar todos los third-submenu y desactivar todos los grupos
+    // Función util para ocultar todos los third-submenu y desactivar todos los grupos y highlights
     function hideAllThird() {
       thirdSubmenus.forEach((container) => {
         container.style.display = 'none';
         const groups = container.querySelectorAll('.third-submenu-content');
         groups.forEach((g) => g.classList.remove('active'));
       });
+      // Remove active class from all triggers
+      triggers.forEach((t) => t.classList.remove('active'));
     }
 
     triggers.forEach((trigger) => {
@@ -621,6 +628,8 @@
         groups.forEach((group) => {
           group.classList.toggle('active', group.getAttribute('data-parent') === handle);
         });
+        // Highlight the current trigger
+        trigger.classList.add('active');
       });
 
       trigger.addEventListener('click', (e) => {
@@ -652,6 +661,8 @@
         groups.forEach((group) => {
           group.classList.toggle('active', group.getAttribute('data-parent') === handle);
         });
+        // Highlight the current trigger
+        trigger.classList.add('active');
       });
     });
 
@@ -661,6 +672,8 @@
         container.style.display = 'none';
         const groups = container.querySelectorAll('.third-submenu-content');
         groups.forEach((g) => g.classList.remove('active'));
+        // Remove active from triggers (though hideAllThird would handle globally, but per-container for precision)
+        triggers.forEach((t) => t.classList.remove('active'));
       });
     });
 
