@@ -46,7 +46,12 @@
                       >
                         {%- if menu_image != '' -%}
                           <span class="menu-drawer__item-icon">
-                            <img src="{{ menu_image }}" alt="{{ link.title | escape }}" loading="lazy">
+                            <img
+                              src="{{ menu_image }}"
+                              alt="{{ link.title | escape }}"
+                              loading="lazy"
+                              class="drawer-menu-image"
+                            >
                           </span>
                         {%- else -%}
                           <span class="svg-wrapper">
