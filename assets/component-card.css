@@ -115,8 +115,9 @@
 
 .card__inner {
   width: 100%;
-  max-height: 250px;
+  max-height: 150px;
   height: 100%;
+  padding: 0 10px;
 }
 
 .card--media .card__inner .card__content {
