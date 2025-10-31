@@ -29,7 +29,7 @@
                       2) Else try an asset named "menu-{{ link.handle }}.png" (upload these to Assets).
                       3) Else fall back to the inline svg icon already used.
                   {%- endcomment -%}
-                  {%- assign menu_image = 'scion-frs-1' -%}
+                  {%- assign menu_image = '' -%}
                   {%- if link.object and link.object.image -%}
                     {%- comment -%} collection/product/page image; resize as needed {%- endcomment -%}
                     {%- assign menu_image = link.object.image | img_url: '100x' -%}
