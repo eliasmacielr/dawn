@@ -23,12 +23,36 @@
             <ul class="menu-drawer__menu has-submenu list-menu" role="list">
               {%- for link in section.settings.menu.links -%}
                 <li>
+                  {%- comment -%}
+                    Resolve a menu image:
+                      1) If the link points to an object with an image (collection/product/page), use that.
+                      2) Else try an asset named "menu-{{ link.handle }}.png" (upload these to Assets).
+                      3) Else fall back to the inline svg icon already used.
+                  {%- endcomment -%}
+                  {%- assign menu_image = 'scion-frs-1' -%}
+                  {%- if link.object and link.object.image -%}
+                    {%- comment -%} collection/product/page image; resize as needed {%- endcomment -%}
+                    {%- assign menu_image = link.object.image | img_url: '100x' -%}
+                  {%- else -%}
+                    {%- comment -%} asset fallback: upload assets named menu-<handle>.png/.jpg/.webp etc. {%- endcomment -%}
+                    {%- assign menu_image = 'menu-' | append: link.handle | append: '.png' | asset_url -%}
+                  {%- endif -%}
+
                   {%- if link.links != blank -%}
                     <details id="Details-menu-drawer-menu-item-{{ forloop.index }}">
                       <summary
                         id="HeaderDrawer-{{ link.handle }}"
                         class="menu-drawer__menu-item list-menu__item link link--text focus-inset{% if link.child_active %} menu-drawer__menu-item--active{% endif %}"
                       >
+                        {%- if menu_image != '' -%}
+                          <span class="menu-drawer__item-icon">
+                            <img src="{{ menu_image }}" alt="{{ link.title | escape }}" loading="lazy">
+                          </span>
+                        {%- else -%}
+                          <span class="svg-wrapper">
+                            {{- 'icon-arrow.svg' | inline_asset_content -}}
+                          </span>
+                        {%- endif -%}
                         {{ link.title | escape }}
                         <span class="svg-wrapper">
                           {{- 'icon-arrow.svg' | inline_asset_content -}}
@@ -128,6 +152,11 @@
                         aria-current="page"
                       {% endif %}
                     >
+                      {%- if menu_image != '' -%}
+                        <span class="menu-drawer__item-icon">
+                          <img src="{{ menu_image }}" alt="{{ link.title | escape }}" loading="lazy">
+                        </span>
+                      {%- endif -%}
                       {{ link.title | escape }}
                     </a>
                   {%- endif -%}
