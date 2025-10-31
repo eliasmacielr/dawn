@@ -320,7 +320,7 @@
       "settings": {
         "h": "Featured Products",
         "ha": "center",
-        "col": "air-intake-filter-replacements",
+        "col": "featured-products",
         "pts": 10,
         "bc": "#000000"
       }
