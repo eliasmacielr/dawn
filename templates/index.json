@@ -30,7 +30,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop now!",
-            "button_link_1": "/search?q=invidia",
+            "button_link_1": "/search?q=OLM",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -64,9 +64,9 @@
           "type": "showcase_item",
           "settings": {
             "collection": "",
-            "custom_url": "",
+            "custom_url": "/search?q=factionfab",
             "custom_image": "shopify://shop_images/factionfab-coilovers-ftspeed-614x306.jpg",
-            "title": "",
+            "title": "Check Out FactionFab Products!",
             "subtitle": "",
             "button_text": "Shop Now"
           }
@@ -75,9 +75,9 @@
           "type": "showcase_item",
           "settings": {
             "collection": "",
-            "custom_url": "",
+            "custom_url": "/alpha-rex-usa",
             "custom_image": "shopify://shop_images/alpharexft.jpg",
-            "title": "",
+            "title": "AlphaRex Lighting",
             "subtitle": "",
             "button_text": "Shop Now"
           }
