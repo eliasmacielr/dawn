@@ -149,6 +149,15 @@
   }
 }
 
+.menu-drawer__item-icon {
+ width: 150px;
+ height: 100px;
+}
+
+.drawer-menu-image {
+  height: 100%;
+}
+
 .section-title {
   margin: 0;
   font-size: 2.5rem;
