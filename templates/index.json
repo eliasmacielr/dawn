@@ -100,8 +100,8 @@
       "settings": {
         "h": "Best Sellers",
         "ha": "left",
-        "col": "air-intake-filter-replacements",
-        "pts": 10,
+        "col": "best-sellers",
+        "pts": 20,
         "bc": "#000000"
       }
     },
