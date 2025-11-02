@@ -319,7 +319,7 @@
       "name": "New Product Carousel",
       "settings": {
         "h": "Featured Products",
-        "ha": "center",
+        "ha": "left",
         "col": "featured-products",
         "pts": 15,
         "bc": "#000000"
