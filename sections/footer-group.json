@@ -25,14 +25,14 @@
           "type": "link_list",
           "settings": {
             "heading": "Support",
-            "menu": "support"
+            "menu": "about-us"
           }
         },
         "link_list_XJdNJk": {
           "type": "link_list",
           "settings": {
             "heading": "About Us",
-            "menu": "about-us"
+            "menu": "support-footer"
           }
         },
         "link_list_wi49RP": {
