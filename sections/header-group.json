@@ -18,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "text": "<p><strong>Save 5% OFF with Code: SPEED5</strong> Some Restrictions May Apply | <strong>Free Shipping on Orders Over $199</strong></p><p></p>",
-            "text_mobile": "<p>5% OFF. Use Code: SPEED5. </p>",
+            "text_mobile": "<p>Spend $199+ to qualify for Free Shipping!</p>",
             "link": ""
           }
         }
@@ -29,7 +29,7 @@
       "settings": {
         "auto_rotate": false,
         "change_slides_speed": 5,
-        "color_scheme": "scheme-3",
+        "color_scheme": "scheme-2b6b47d3-34e5-4c0f-9ffe-5d7927d2a47d",
         "show_line_separator": true,
         "show_social": false,
         "enable_country_selector": false,
@@ -42,11 +42,11 @@
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
         "show_search_bar": true,
-        "menu": "menu-drawer-mobile",
+        "menu": "",
         "menu_type_desktop": "dropdown",
         "sticky_header_type": "always",
         "show_line_separator": true,
-        "color_scheme": "scheme-4",
+        "color_scheme": "scheme-5",
         "menu_color_scheme": "",
         "enable_country_selector": true,
         "enable_language_selector": true,
@@ -62,19 +62,15 @@
         "link_list_rUCCCa": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/dev-nav-scion-frs_1.jpg",
             "heading": "Quick links",
-            "menu": "scion-frs-1",
-            "sidebar_image": "shopify://shop_images/dev-nav-scion-frs_1.jpg"
+            "menu": ""
           }
         },
         "link_list_C8dAPE": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/dev-nav-toyota-86_1.jpg",
             "heading": "Quick links",
-            "menu": "toyota-86",
-            "sidebar_image": "shopify://shop_images/dev-nav-toyota-86_1.jpg"
+            "menu": "toyota-86"
           }
         },
         "link_list_fFthea": {
@@ -89,10 +85,8 @@
         "link_list_jYahdW": {
           "type": "link_list",
           "settings": {
-            "image": "shopify://shop_images/dev-nav-supra.jpg",
             "heading": "Quick links",
-            "menu": "toyota-supra",
-            "sidebar_image": "shopify://shop_images/dev-nav-supra.jpg"
+            "menu": ""
           }
         },
         "link_list_3b7ppY": {
@@ -124,14 +118,7 @@
         "color_scheme": "scheme-1",
         "menu_color_scheme": "",
         "third_image_1": "shopify://shop_images/apivskc2d__78153.1633558767.1280.jpg",
-        "third_image_2": "shopify://shop_images/aca215ec8097fd5c95db433146ed5529.jpg",
-        "third_image_3": "shopify://shop_images/26cde1caf3ff31e143baeb83c87277c1_cccba822-133a-4bcf-acd5-085d3cea3fe1.jpg",
-        "third_image_4": "shopify://shop_images/6a989c8812c7e3590f82828894dfbc6a.jpg",
-        "third_image_5": "shopify://shop_images/f0d91934ab3f2d319add56662b1eb6bf.jpg",
-        "third_image_6": "shopify://shop_images/e6fd501849217b12778c67e93d83753f.jpg",
-        "third_image_7": "shopify://shop_images/9cf8363457c7716453a8fc9817d820b5.jpg",
         "third_image_8": "shopify://shop_images/eeb214214bdd44e0ee3ce327798f3931.jpg",
-        "third_image_9": "shopify://shop_images/clearance-homepage-graphics-ftspeed-614x306.jpg",
         "enable_country_selector": true,
         "enable_language_selector": true,
         "enable_customer_avatar": true,
