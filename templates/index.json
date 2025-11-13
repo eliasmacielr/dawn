@@ -44,16 +44,58 @@
         "button"
       ],
       "settings": {
+        "image": "shopify://shop_images/Early_bird_-_base.png",
         "image_overlay_opacity": 40,
         "image_height": "adapt",
         "image_behavior": "none",
-        "desktop_content_position": "bottom-left",
-        "desktop_content_alignment": "left",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
         "show_text_box": false,
-        "color_scheme": "scheme-e700d056-7567-4d91-8abb-a473b8b4003c",
+        "color_scheme": "scheme-89a9d194-08ce-478a-8a76-7575ff44a51f",
         "stack_images_on_mobile": false,
         "mobile_content_alignment": "left",
         "show_text_below": false
+      }
+    },
+    "collection_list_dVKJAP": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_PPN8WQ": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "gifts-25"
+          }
+        },
+        "featured_collection_6nVizA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_QXzTET": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_PPN8WQ",
+        "featured_collection_6nVizA",
+        "featured_collection_QXzTET"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     },
     "featured_productsv2_dbFqgz": {
@@ -311,6 +353,7 @@
   },
   "order": [
     "image_banner",
+    "collection_list_dVKJAP",
     "featured_productsv2_dbFqgz",
     "shop_by_categories_efE7JY",
     "featured_collections_UwYTiM",
