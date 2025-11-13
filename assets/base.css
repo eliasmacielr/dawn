@@ -661,6 +661,7 @@ hr {
 .breadcrumbs .full-unstyled-link {
   display: inline;
   padding-left: 1rem;
+  padding-right: 1rem;
   white-space: wrap;
 }
 
