@@ -9,6 +9,38 @@
  */
 {
   "sections": {
+    "17630449320df0b1dc": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7c3be73_zqaPyz": {
+          "type": "ai_gen_block_7c3be73",
+          "settings": {
+            "heading": "Limited Time Offer",
+            "end_date": "2025-11-28",
+            "end_time": "00:00",
+            "completion_message": "<p>Black Friday has began!</p>",
+            "show_days": true,
+            "show_hours": true,
+            "show_minutes": true,
+            "background_color": "#f3f3f3",
+            "text_color": "#121212",
+            "number_color": "#ffaa00",
+            "number_bg_color": "#ffffff",
+            "message_color": "#ffaa00",
+            "heading_size": 32,
+            "number_size": 48,
+            "label_size": 12,
+            "message_size": 24,
+            "border_radius": 4
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7c3be73_zqaPyz"
+      ],
+      "settings": {}
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -349,9 +381,14 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "1763044913a57bbb22": {
+      "type": "_blocks",
+      "settings": {}
     }
   },
   "order": [
+    "17630449320df0b1dc",
     "image_banner",
     "collection_list_dVKJAP",
     "featured_productsv2_dbFqgz",
@@ -360,6 +397,7 @@
     "featured_collections_3z3GjU",
     "image_banner_HUfAiz",
     "featured_productsv2_iYT83w",
-    "featured_blog_wnRWTM"
+    "featured_blog_wnRWTM",
+    "1763044913a57bbb22"
   ]
 }
