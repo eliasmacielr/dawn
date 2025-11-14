@@ -1,7 +1,3 @@
-{% doc %}
-  @prompt
-    can you make a collection display with 4 columns, each with one card that has the collection and an image that links to the collection. the cards also have to have a title below on a gray background and make it so i can choose the border radius
-{% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
@@ -79,48 +75,48 @@
   }
 {% endstyle %}
 
-<div class="ai-collection-grid-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  {% for i in (1..4) %}
-    {% liquid
-      assign collection_key = 'collection_' | append: i
-      assign collection = block.settings[collection_key]
-    %}
+<div class="page-width">
+  <div class="ai-collection-grid-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+    {% for i in (1..4) %}
+      {% liquid
+        assign collection_key = 'collection_' | append: i
+        assign collection = block.settings[collection_key]
+      %}
 
-    {% if collection != blank %}
-      <a href="{{ collection.url }}" class="ai-collection-card-{{ ai_gen_id }}">
-        <div class="ai-collection-card-image-wrapper-{{ ai_gen_id }}">
-          {% if collection.featured_image %}
-            <img
-              src="{{ collection.featured_image | image_url: width: 600 }}"
-              alt="{{ collection.featured_image.alt | escape }}"
-              class="ai-collection-card-image-{{ ai_gen_id }}"
-              loading="lazy"
-              width="600"
-              height="600"
-            >
-          {% else %}
+      {% if collection != blank %}
+        <a href="{{ collection.url }}" class="ai-collection-card-{{ ai_gen_id }}">
+          <div class="ai-collection-card-image-wrapper-{{ ai_gen_id }}">
+            {% if collection.featured_image %}
+              <img
+                src="{{ collection.featured_image | image_url: width: 600 }}"
+                alt="{{ collection.featured_image.alt | escape }}"
+                class="ai-collection-card-image-{{ ai_gen_id }}"
+                loading="lazy"
+                width="600"
+                height="600"
+              >
+            {% else %}
+              <div class="ai-collection-card-placeholder-{{ ai_gen_id }}">
+                {{ 'collection-1' | placeholder_svg_tag }}
+              </div>
+            {% endif %}
+          </div>
+          <h3 class="ai-collection-card-title-{{ ai_gen_id }}">
+            {{ collection.title }}
+          </h3>
+        </a>
+      {% else %}
+        <div class="ai-collection-card-{{ ai_gen_id }}">
+          <div class="ai-collection-card-image-wrapper-{{ ai_gen_id }}">
             <div class="ai-collection-card-placeholder-{{ ai_gen_id }}">
               {{ 'collection-1' | placeholder_svg_tag }}
             </div>
-          {% endif %}
-        </div>
-        <h3 class="ai-collection-card-title-{{ ai_gen_id }}">
-          {{ collection.title }}
-        </h3>
-      </a>
-    {% else %}
-      <div class="ai-collection-card-{{ ai_gen_id }}">
-        <div class="ai-collection-card-image-wrapper-{{ ai_gen_id }}">
-          <div class="ai-collection-card-placeholder-{{ ai_gen_id }}">
-            {{ 'collection-1' | placeholder_svg_tag }}
           </div>
+          <h3 class="ai-collection-card-title-{{ ai_gen_id }}">Collection {{ i }}</h3>
         </div>
-        <h3 class="ai-collection-card-title-{{ ai_gen_id }}">
-          Collection {{ i }}
-        </h3>
-      </div>
-    {% endif %}
-  {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
 </div>
 
 {% schema %}
