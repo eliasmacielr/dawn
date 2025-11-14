@@ -262,6 +262,10 @@
   }
 
   .header__third-submenu .third-submenu-content li a:hover {
+    text-decoration: underline;
+  }
+
+  .header__third-submenu .third-submenu-content li a:hover {
     color: #000;
   }
 </style>
@@ -354,7 +358,12 @@
                     role="list"
                     tabindex="-1"
                   >
-                    <div class="header__submenu__content">
+                    <div
+                      class="header__submenu__content"
+                      {% if forloop.index >= 3 %}
+                        style="margin: 0 auto;"
+                      {% endif %}
+                    >
                       {%- for childlink in link.links -%}
                         <li>
                           {%- if childlink.links == blank -%}
@@ -426,6 +435,11 @@
                           {%- for grandchildlink in childlink.links -%}
                             {%- assign image_key = 'third_image_' | append: forloop.index -%}
                             <li>
+                              <img
+                                src="{{ section.settings[image_key] | image_url: width: 54, height: 54, crop: 'center' }}"
+                                alt="{{ grandchildlink.title | escape }}"
+                                loading="lazy"
+                              >
                               <a
                                 href="{%- if section.settings.use_apps_prefix -%}/apps{%- endif -%}{{ grandchildlink.url }}"
                                 class="header__menu-item list-menu__item link focus-inset caption-large"
@@ -433,11 +447,6 @@
                                   aria-current="page"
                                 {% endif %}
                               >
-                                <img
-                                  src="{{ section.settings[image_key] | image_url: width: 54, height: 54, crop: 'center' }}"
-                                  alt="{{ grandchildlink.title | escape }}"
-                                  loading="lazy"
-                                >
                                 {{ grandchildlink.title | escape }}
                               </a>
                             </li>
