@@ -9,38 +9,6 @@
  */
 {
   "sections": {
-    "17630449320df0b1dc": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_7c3be73_zqaPyz": {
-          "type": "ai_gen_block_7c3be73",
-          "settings": {
-            "heading": "Limited Time Offer",
-            "end_date": "2025-11-28",
-            "end_time": "00:00",
-            "completion_message": "<p>Black Friday has began!</p>",
-            "show_days": true,
-            "show_hours": true,
-            "show_minutes": true,
-            "background_color": "#f3f3f3",
-            "text_color": "#121212",
-            "number_color": "#ffaa00",
-            "number_bg_color": "#ffffff",
-            "message_color": "#ffaa00",
-            "heading_size": 32,
-            "number_size": 48,
-            "label_size": 12,
-            "message_size": 24,
-            "border_radius": 4
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_7c3be73_zqaPyz"
-      ],
-      "settings": {}
-    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -89,46 +57,64 @@
         "show_text_below": false
       }
     },
-    "collection_list_dVKJAP": {
-      "type": "collection-list",
+    "17630449320df0b1dc": {
+      "type": "_blocks",
       "blocks": {
-        "featured_collection_PPN8WQ": {
-          "type": "featured_collection",
+        "ai_gen_block_7c3be73_zqaPyz": {
+          "type": "ai_gen_block_7c3be73",
           "settings": {
-            "collection": "gifts-25"
-          }
-        },
-        "featured_collection_6nVizA": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "featured_collection_QXzTET": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
+            "heading": "Limited Time Offer",
+            "end_date": "2025-11-28",
+            "end_time": "00:00",
+            "completion_message": "<p>Black Friday has began!</p>",
+            "show_days": true,
+            "show_hours": true,
+            "show_minutes": true,
+            "background_color": "#f3f3f3",
+            "text_color": "#121212",
+            "number_color": "#ffaa00",
+            "number_bg_color": "#ffffff",
+            "message_color": "#ffaa00",
+            "heading_size": 32,
+            "number_size": 48,
+            "label_size": 12,
+            "message_size": 24,
+            "border_radius": 4
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "featured_collection_PPN8WQ",
-        "featured_collection_6nVizA",
-        "featured_collection_QXzTET"
+        "ai_gen_block_7c3be73_zqaPyz"
       ],
-      "name": "t:sections.collection-list.presets.name",
-      "settings": {
-        "title": "Collections",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 4,
-        "color_scheme": "",
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
+      "settings": {}
+    },
+    "17631521266657f3e7": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_7902c9b_bkYwCB": {
+          "type": "ai_gen_block_7902c9b",
+          "settings": {
+            "collection_1": "",
+            "collection_2": "",
+            "collection_3": "",
+            "collection_4": "",
+            "grid_gap": 28,
+            "section_padding": 40,
+            "columns_mobile": "2",
+            "border_radius": 8,
+            "title_background_color": "#e5e5e5",
+            "title_text_color": "#121212",
+            "title_padding": 16,
+            "title_font_size": 16
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_7902c9b_bkYwCB"
+      ],
+      "settings": {}
     },
     "featured_productsv2_dbFqgz": {
       "type": "featured-productsv2",
@@ -388,9 +374,9 @@
     }
   },
   "order": [
-    "17630449320df0b1dc",
     "image_banner",
-    "collection_list_dVKJAP",
+    "17630449320df0b1dc",
+    "17631521266657f3e7",
     "featured_productsv2_dbFqgz",
     "shop_by_categories_efE7JY",
     "featured_collections_UwYTiM",
