@@ -95,14 +95,15 @@
         "ai_gen_block_5832d43_m8rpQd": {
           "type": "ai_gen_block_5832d43",
           "settings": {
-            "collection_1": "",
-            "title_1": "",
+            "collection_1": "gifts-25",
+            "image_1": "shopify://shop_images/Frame_8.png",
+            "title_1": "Shop Under 25$",
             "collection_2": "",
-            "title_2": "",
+            "title_2": "Shop Under 50$",
             "collection_3": "",
-            "title_3": "",
+            "title_3": "Shop Under 75$",
             "collection_4": "",
-            "title_4": "",
+            "title_4": "Shop Under 100$",
             "title_background_color": "#e0e0e0",
             "title_text_color": "#121212",
             "title_font_size": 16,
@@ -114,33 +115,6 @@
       },
       "block_order": [
         "ai_gen_block_5832d43_m8rpQd"
-      ],
-      "settings": {}
-    },
-    "17631521266657f3e7": {
-      "type": "_blocks",
-      "blocks": {
-        "ai_gen_block_7902c9b_bkYwCB": {
-          "type": "ai_gen_block_7902c9b",
-          "settings": {
-            "collection_1": "",
-            "collection_2": "",
-            "collection_3": "",
-            "collection_4": "",
-            "grid_gap": 28,
-            "section_padding": 40,
-            "columns_mobile": "2",
-            "border_radius": 8,
-            "title_background_color": "#e5e5e5",
-            "title_text_color": "#121212",
-            "title_padding": 16,
-            "title_font_size": 16
-          },
-          "blocks": {}
-        }
-      },
-      "block_order": [
-        "ai_gen_block_7902c9b_bkYwCB"
       ],
       "settings": {}
     },
@@ -405,7 +379,6 @@
     "image_banner",
     "17630449320df0b1dc",
     "1763152749fc663bb3",
-    "17631521266657f3e7",
     "featured_productsv2_dbFqgz",
     "shop_by_categories_efE7JY",
     "featured_collections_UwYTiM",
