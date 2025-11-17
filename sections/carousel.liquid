@@ -1,77 +1,92 @@
-<!-- sections/image-carousel.liquid -->
+{% comment %}
+  Customizable Image Carousel
+
+  Usage:
+  - Add up to 5 images
+  - Each image can have a custom button color and position
+  - Button can be hidden per image
+{% endcomment %}
+
+{% assign slides = 5 %}
+{% assign images = 'image1.jpg,image2.jpg,image3.jpg,image4.jpg,image5.jpg' | split: ',' %}
+{% assign button_colors = '#FF6B6B,#4ECDC4,#45B7D1,#FFA07A,#98D8C8' | split: ',' %}
+{% assign button_positions = 'center,bottom-right,top-left,center,bottom-left' | split: ',' %}
+{% assign show_button = 'true,true,true,false,true' | split: ',' %}
 
 <style>
   .carousel-container {
     position: relative;
-    max-width: 100%;
+    width: 100%;
+    max-width: 100vw;
     margin: 0 auto;
     overflow: hidden;
-  }
-
-  .carousel {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    width: 100%;
-    position: relative;
+    aspect-ratio: 16 / 9;
   }
 
   .carousel-slide {
-    min-width: 100%;
+    display: none;
     position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-slide.active {
+    display: block;
   }
 
   .carousel-slide img {
     width: 100%;
-    height: auto;
-    max-height: 60vh; /* Adjust as needed for your design; ensures containment while adapting */
-    object-fit: contain;
+    height: 100%;
+    object-fit: cover;
     display: block;
   }
 
-  .carousel-button {
+  .carousel-button-wrapper {
     position: absolute;
-    padding: 12px 24px;
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
     z-index: 10;
   }
 
-  .carousel-button:hover {
-    background-color: rgba(0, 0, 0, 0.9);
-  }
-
-  .carousel-button.top-left {
-    top: 20px;
-    left: 20px;
-  }
-
-  .carousel-button.top-right {
-    top: 20px;
-    right: 20px;
-  }
-
-  .carousel-button.bottom-left {
-    bottom: 20px;
-    left: 20px;
-  }
-
-  .carousel-button.bottom-right {
-    bottom: 20px;
-    right: 20px;
-  }
-
-  .carousel-button.center {
+  .carousel-button-wrapper.center {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .carousel-button-wrapper.top-left {
+    top: 10%;
+    left: 10%;
+  }
+
+  .carousel-button-wrapper.top-right {
+    top: 10%;
+    right: 10%;
+  }
+
+  .carousel-button-wrapper.bottom-left {
+    bottom: 10%;
+    left: 10%;
+  }
+
+  .carousel-button-wrapper.bottom-right {
+    bottom: 10%;
+    right: 10%;
+  }
+
+  .carousel-cta-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .carousel-cta-button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
   }
 
   .carousel-nav {
@@ -81,214 +96,121 @@
     background: rgba(0, 0, 0, 0.5);
     color: white;
     border: none;
-    padding: 10px;
+    padding: 15px 20px;
     cursor: pointer;
+    font-size: 24px;
     z-index: 20;
-    font-size: 18px;
+    transition: background 0.3s;
   }
 
-  .prev {
-    left: 10px;
+  .carousel-nav:hover {
+    background: rgba(0, 0, 0, 0.8);
   }
 
-  .next {
-    right: 10px;
+  .carousel-nav.prev {
+    left: 20px;
   }
 
-  .carousel-dots {
+  .carousel-nav.next {
+    right: 20px;
+  }
+
+  .carousel-indicators {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    justify-content: center;
     gap: 10px;
-    margin-top: 20px;
+    z-index: 20;
   }
 
-  .dot {
+  .carousel-indicator {
     width: 12px;
     height: 12px;
     border-radius: 50%;
-    background: #ccc;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
     cursor: pointer;
     transition: background 0.3s;
   }
 
-  .dot.active {
-    background: #333;
+  .carousel-indicator.active {
+    background: white;
   }
 
   @media (max-width: 768px) {
-    .carousel-slide img {
-      max-height: 50vh;
+    .carousel-cta-button {
+      padding: 12px 24px;
+      font-size: 16px;
+    }
+
+    .carousel-nav {
+      padding: 10px 15px;
+      font-size: 20px;
+    }
+
+    .carousel-button-wrapper.top-left,
+    .carousel-button-wrapper.bottom-left {
+      left: 5%;
+    }
+
+    .carousel-button-wrapper.top-right,
+    .carousel-button-wrapper.bottom-right {
+      right: 5%;
     }
   }
 </style>
 
-<div class="carousel-container" id="carousel-{{ section.id }}">
-  <div class="carousel" id="carousel-track-{{ section.id }}">
-    {% for block in section.blocks %}
-      <div
-        class="carousel-slide"
-        style="height: {{ block.settings.image.height | divided_by: block.settings.image.width | times: 100 }}vw; max-height: 60vh;"
-      >
-        {% assign img_url = block.settings.image | img_url: 'master' %}
-        <img
-          src="{{ img_url }}"
-          alt="{{ block.settings.image.alt | escape }}"
-          width="{{ block.settings.image.width }}"
-          height="{{ block.settings.image.height }}"
-          loading="lazy"
-        >
+<div class="carousel-container">
+  {% for i in (0..4) %}
+    <div class="carousel-slide {% if i == 0 %}active{% endif %}" data-slide="{{ i }}">
+      <img src="{{ images[i] }}" alt="Slide {{ i | plus: 1 }}" loading="lazy">
 
-        {% if block.settings.show_button
-          and block.settings.button_url != blank
-          and block.settings.button_text != blank
-        %}
-          <a href="{{ block.settings.button_url }}" class="carousel-button {{ block.settings.button_position }}">
-            {{ block.settings.button_text | escape }}
-          </a>
-        {% endif %}
-      </div>
+      {% if show_button[i] == 'true' %}
+        <div class="carousel-button-wrapper {{ button_positions[i] }}">
+          <button class="carousel-cta-button" style="background-color: {{ button_colors[i] }};">Shop Now</button>
+        </div>
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  <button class="carousel-nav prev" onclick="moveSlide(-1)">‹</button>
+  <button class="carousel-nav next" onclick="moveSlide(1)">›</button>
+
+  <div class="carousel-indicators">
+    {% for i in (0..4) %}
+      <button class="carousel-indicator {% if i == 0 %}active{% endif %}" onclick="goToSlide({{ i }})"></button>
     {% endfor %}
   </div>
-
-  {% if section.blocks.size > 1 %}
-    <button class="carousel-nav prev" onclick="changeSlide({{ section.id }}, -1)">‹</button>
-    <button class="carousel-nav next" onclick="changeSlide({{ section.id }}, 1)">›</button>
-
-    <div class="carousel-dots" id="dots-{{ section.id }}"></div>
-  {% endif %}
 </div>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const sectionId = '{{ section.id }}';
-    const carousel = document.getElementById('carousel-track-' + sectionId);
-    const slides = carousel ? carousel.children : [];
-    const totalSlides = slides.length;
-    let currentSlide = 0;
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.carousel-slide');
+  const indicators = document.querySelectorAll('.carousel-indicator');
+  const totalSlides = slides.length;
 
-    if (totalSlides <= 1) return; // No carousel if 1 or fewer slides
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active');
+    indicators[currentSlide].classList.remove('active');
 
-    const dotsContainer = document.getElementById('dots-' + sectionId);
+    currentSlide = (n + totalSlides) % totalSlides;
 
-    // Create dots
-    for (let i = 0; i < totalSlides; i++) {
-      const dot = document.createElement('span');
-      dot.classList.add('dot');
-      dot.onclick = () => goToSlide(i);
-      dotsContainer.appendChild(dot);
-    }
-
-    const dots = dotsContainer.children;
-
-    function updateCarousel() {
-      carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
-      for (let i = 0; i < totalSlides; i++) {
-        dots[i].classList.toggle('active', i === currentSlide);
-      }
-    }
-
-    function goToSlide(n) {
-      currentSlide = (n + totalSlides) % totalSlides;
-      updateCarousel();
-    }
-
-    function changeSlide(n) {
-      goToSlide(currentSlide + n);
-    }
-
-    // Auto-advance (optional, remove if not wanted)
-    // setInterval(() => changeSlide(1), 5000);
-
-    updateCarousel();
-  });
-
-  // Global functions for nav buttons
-  function changeSlide(sectionId, n) {
-    // This will be called by onclick, but logic is in DOMContentLoaded
-    // Note: For multiple sections, each has its own script scope via section.id
+    slides[currentSlide].classList.add('active');
+    indicators[currentSlide].classList.add('active');
   }
-</script>
 
-{% schema %}
-{
-  "name": "Image Carousel",
-  "tag": "section",
-  "class": "section",
-  "settings": [],
-  "blocks": [
-    {
-      "type": "image_with_button",
-      "name": "Image with Button",
-      "settings": [
-        {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
-          "type": "text",
-          "id": "button_text",
-          "label": "Button Text",
-          "default": "Learn More"
-        },
-        {
-          "type": "url",
-          "id": "button_url",
-          "label": "Button URL"
-        },
-        {
-          "type": "checkbox",
-          "id": "show_button",
-          "label": "Show Button",
-          "default": true
-        },
-        {
-          "type": "select",
-          "id": "button_position",
-          "label": "Button Position",
-          "options": [
-            {
-              "value": "top-left",
-              "label": "Top Left"
-            },
-            {
-              "value": "top-right",
-              "label": "Top Right"
-            },
-            {
-              "value": "bottom-left",
-              "label": "Bottom Left"
-            },
-            {
-              "value": "bottom-right",
-              "label": "Bottom Right"
-            },
-            {
-              "value": "center",
-              "label": "Center"
-            }
-          ],
-          "default": "bottom-right"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Image Carousel",
-      "blocks": [
-        {
-          "type": "image_with_button"
-        },
-        {
-          "type": "image_with_button"
-        },
-        {
-          "type": "image_with_button"
-        }
-      ]
-    }
-  ],
-  "max_blocks": 5
-}
-{% endschema %}
+  function moveSlide(direction) {
+    showSlide(currentSlide + direction);
+  }
+
+  function goToSlide(n) {
+    showSlide(n);
+  }
+
+  // Auto-advance carousel every 5 seconds
+  setInterval(() => {
+    moveSlide(1);
+  }, 5000);
+</script>
