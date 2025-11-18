@@ -51,6 +51,21 @@
   --text-alignment: var(--blog-card-text-alignment);
 }
 
+.spf-product-card__title {
+  overflow: hidden; /* Hides overflowing content */
+  display: -webkit-box; /* Enables flexible box layout */
+  -webkit-line-clamp: 4; /* Limits the text to 3 lines before truncating */
+  line-clamp: 4; /* Standard property for line clamping */
+  -webkit-box-orient: vertical; /* Specifies the orientation of the box */
+}
+
+.card__heading {
+  overflow: hidden; /* Hides overflowing content */
+  display: -webkit-box; /* Enables flexible box layout */
+  -webkit-line-clamp: 4; /* Limits the text to 3 lines before truncating */
+  line-clamp: 4; /* Standard property for line clamping */
+  -webkit-box-orient: vertical; /* Specifies the orientation of the box */}
+
 .contains-content-container,
 .content-container {
   --border-radius: var(--text-boxes-radius);
