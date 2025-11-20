@@ -18,7 +18,7 @@
             "carousel_height": 350,
             "slide_1_image": "shopify://shop_images/Early_bird_-_copy_no_buttn.png",
             "slide_1_show_button": true,
-            "slide_1_button_text": "Shop now",
+            "slide_1_button_text": "Shop Early Access",
             "slide_1_button_link": "",
             "slide_2_image": "shopify://shop_images/Early_bird_-_grimmspeed_sale.png",
             "slide_2_show_button": false,
@@ -36,10 +36,10 @@
             "slide_5_button_text": "Shop now",
             "slide_5_button_link": "",
             "button_position": "bottom_center",
-            "button_color": "#121212",
-            "button_text_color": "#ffffff",
-            "button_hover_color": "#000000",
-            "arrow_color": "#ffffff",
+            "button_color": "#f7a01d",
+            "button_text_color": "#000000",
+            "button_hover_color": "#f7a01d",
+            "arrow_color": "#f7a01d",
             "arrow_icon_color": "#121212",
             "arrow_hover_color": "#f3f3f3",
             "dot_color": "#ffffff"
@@ -58,7 +58,7 @@
         "ai_gen_block_7c3be73_zqaPyz": {
           "type": "ai_gen_block_7c3be73",
           "settings": {
-            "heading": "Black Friday Starts In",
+            "heading": "Black Friday Is Coming, Get Ready to Launch!",
             "end_date": "2025-11-28",
             "end_time": "00:00",
             "completion_message": "<p>Black Friday has begun!</p>",
