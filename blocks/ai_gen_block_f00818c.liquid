@@ -1,9 +1,3 @@
-{% doc %}
-  @prompt
-    make a carousel that can have up to 5 images that change every 5 seconds, also they have a button that can be anywhere in the section or hidden individually per slider, change color and also set the link it links to.
-    the image has to cover the banner if possible.
-    make sure you have arrow to the sides to switch form sliders and make sure there are up to 5 dots depending on how manhy images are uploaded
-{% enddoc %}
 {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
 {% style %}
@@ -232,7 +226,10 @@
       %}
 
       {% if slide_image %}
-        <div class="ai-carousel-slide-{{ ai_gen_id }}{% if forloop.first %} active{% endif %}" data-slide-index="{{ forloop.index0 }}">
+        <div
+          class="ai-carousel-slide-{{ ai_gen_id }}{% if forloop.first %} active{% endif %}"
+          data-slide-index="{{ forloop.index0 }}"
+        >
           <img
             src="{{ slide_image | image_url: width: 2000 }}"
             alt="{{ slide_image.alt | escape }}"
@@ -268,9 +265,7 @@
       <div class="ai-carousel-slide-{{ ai_gen_id }} active" data-slide-index="0">
         <div class="ai-carousel-slide-placeholder-{{ ai_gen_id }}">
           {{ 'hero-apparel-1' | placeholder_svg_tag }}
-          <div class="ai-carousel-empty-state-{{ ai_gen_id }}">
-            Next, add images to your slides
-          </div>
+          <div class="ai-carousel-empty-state-{{ ai_gen_id }}">Next, add images to your slides</div>
         </div>
       </div>
     {% endunless %}
@@ -278,13 +273,29 @@
 
   {% if has_images %}
     <button class="ai-carousel-arrow-{{ ai_gen_id }} prev" aria-label="Previous slide">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <polyline points="15 18 9 12 15 6"></polyline>
       </svg>
     </button>
 
     <button class="ai-carousel-arrow-{{ ai_gen_id }} next" aria-label="Next slide">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
         <polyline points="9 18 15 12 9 6"></polyline>
       </svg>
     </button>
