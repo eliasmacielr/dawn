@@ -9,53 +9,48 @@
  */
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
+    "1763627927e48fd713": {
+      "type": "_blocks",
       "blocks": {
-        "heading": {
-          "type": "heading",
+        "ai_gen_block_f00818c_RfaTdL": {
+          "type": "ai_gen_block_f00818c",
           "settings": {
-            "heading": "Early Bird BLACK FRIDAY starts now",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Get exclusive access to our biggest discounts before everyone else.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop now!",
-            "button_link_1": "/search?q=OLM",
-            "button_style_secondary_1": false,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
+            "carousel_height": 350,
+            "slide_1_image": "shopify://shop_images/Early_bird_-_copy_no_buttn.png",
+            "slide_1_show_button": true,
+            "slide_1_button_text": "Shop now",
+            "slide_1_button_link": "",
+            "slide_2_image": "shopify://shop_images/Early_bird_-_grimmspeed_sale.png",
+            "slide_2_show_button": false,
+            "slide_2_button_text": "Shop now",
+            "slide_2_button_link": "",
+            "slide_3_image": "shopify://shop_images/Early_bird_-_Konig.png",
+            "slide_3_show_button": false,
+            "slide_3_button_text": "Shop now",
+            "slide_3_button_link": "",
+            "slide_4_image": "shopify://shop_images/Early_bird_-_Cobb.png",
+            "slide_4_show_button": false,
+            "slide_4_button_text": "Shop now",
+            "slide_4_button_link": "",
+            "slide_5_show_button": false,
+            "slide_5_button_text": "Shop now",
+            "slide_5_button_link": "",
+            "button_position": "bottom_center",
+            "button_color": "#121212",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#000000",
+            "arrow_color": "#ffffff",
+            "arrow_icon_color": "#121212",
+            "arrow_hover_color": "#f3f3f3",
+            "dot_color": "#ffffff"
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "heading",
-        "text",
-        "button"
+        "ai_gen_block_f00818c_RfaTdL"
       ],
-      "settings": {
-        "image": "shopify://shop_images/Early_bird_-_base.png",
-        "image_overlay_opacity": 40,
-        "image_height": "adapt",
-        "image_behavior": "none",
-        "desktop_content_position": "middle-center",
-        "desktop_content_alignment": "center",
-        "show_text_box": false,
-        "color_scheme": "scheme-89a9d194-08ce-478a-8a76-7575ff44a51f",
-        "stack_images_on_mobile": false,
-        "mobile_content_alignment": "left",
-        "show_text_below": false
-      }
+      "settings": {}
     },
     "17630449320df0b1dc": {
       "type": "_blocks",
@@ -379,7 +374,7 @@
     }
   },
   "order": [
-    "image_banner",
+    "1763627927e48fd713",
     "17630449320df0b1dc",
     "1763152749fc663bb3",
     "featured_productsv2_dbFqgz",
