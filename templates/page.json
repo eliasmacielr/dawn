@@ -67,13 +67,6 @@
             "title": "AEM Induction",
             "link": "/brand/aem-induction"
           }
-        },
-        "brand_card_mRrbhP": {
-          "type": "brand_card",
-          "settings": {
-            "title": "Brand Name",
-            "link": ""
-          }
         }
       },
       "block_order": [
@@ -82,8 +75,7 @@
         "brand_card_QRDBnG",
         "brand_card_Ekf78m",
         "brand_card_CzKwiK",
-        "brand_card_L8C9Rq",
-        "brand_card_mRrbhP"
+        "brand_card_L8C9Rq"
       ],
       "name": "Brand Cards",
       "settings": {
