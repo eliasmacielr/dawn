@@ -10,7 +10,7 @@
   .ai-carousel-slides-{{ ai_gen_id }} {
     position: relative;
     width: 100%;
-    height: {{ block.settings.carousel_height }}px;
+    aspect-ratio: 144 / 45;
   }
 
   .ai-carousel-slide-{{ ai_gen_id }} {
@@ -66,56 +66,72 @@
 
   .ai-carousel-button-wrapper-{{ ai_gen_id }} {
     position: absolute;
-    {% if block.settings.button_position == 'top_left' %}
-      top: 20px;
-      left: 20px;
-    {% elsif block.settings.button_position == 'top_center' %}
-      top: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-    {% elsif block.settings.button_position == 'top_right' %}
-      top: 20px;
-      right: 20px;
-    {% elsif block.settings.button_position == 'center_left' %}
-      top: 50%;
-      left: 20px;
-      transform: translateY(-50%);
-    {% elsif block.settings.button_position == 'center' %}
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    {% elsif block.settings.button_position == 'center_right' %}
-      top: 50%;
-      right: 20px;
-      transform: translateY(-50%);
-    {% elsif block.settings.button_position == 'bottom_left' %}
-      bottom: 20px;
-      left: 20px;
-    {% elsif block.settings.button_position == 'bottom_center' %}
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-    {% elsif block.settings.button_position == 'bottom_right' %}
-      bottom: 20px;
-      right: 20px;
-    {% endif %}
     z-index: 2;
+    {% assign pos = block.settings.button_position %}
+    {% if pos == 'top_left' %}
+      top: 6%;
+      left: 5%;
+      transform: translateY(-20px);
+    {% elsif pos == 'top_center' %}
+      top: 6%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+    {% elsif pos == 'top_right' %}
+      top: 6%;
+      right: 5%;
+      transform: translateY(-20px);
+    {% elsif pos == 'center_left' %}
+      top: 50%;
+      left: 5%;
+      transform: translateY(calc(-50% - 20px));
+    {% elsif pos == 'center' %}
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, calc(-50% - 20px));
+    {% elsif pos == 'center_right' %}
+      top: 50%;
+      right: 5%;
+      transform: translateY(calc(-50% - 20px));
+    {% elsif pos == 'bottom_left' %}
+      bottom: 6%;
+      left: 5%;
+      transform: translateY(-20px);
+    {% elsif pos == 'bottom_center' %}
+      bottom: 6%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+    {% elsif pos == 'bottom_right' %}
+      bottom: 6%;
+      right: 5%;
+      transform: translateY(-20px);
+    {% endif %}
   }
 
   .ai-carousel-button-{{ ai_gen_id }} {
     display: inline-block;
-    padding: 12px 24px;
+    /* responsive vertical and horizontal padding */
+    padding: clamp(6px, 1.2vw, 12px) clamp(12px, 3.2vw, 28px);
     background-color: {{ block.settings.button_color }};
     color: {{ block.settings.button_text_color }};
     text-decoration: none;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+    /* radius and font scale with viewport */
+    border-radius: clamp(3px, 0.6vw, 8px);
+    font-size: clamp(12px, 1.6vw, 18px);
+    line-height: 1;
+    transition: background-color 0.3s ease, transform 0.15s ease;
+    transform: translateY(-15px);
   }
 
-  .ai-carousel-button-{{ ai_gen_id }}:hover {
-    background-color: {{ block.settings.button_hover_color }};
+  @media screen and (min-width: 1439px) {
+    .ai-carousel-button-{{ ai_gen_id }} {
+      transform: translateY(-45px);
+    }
   }
+
+  /* .ai-carousel-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+    transform: translateY(-2px);
+  } */
 
   .ai-carousel-arrow-{{ ai_gen_id }} {
     position: absolute;
@@ -178,9 +194,17 @@
     opacity: 1;
   }
 
+  .ai-carousel-slide-desktop-{{ ai_gen_id }} {
+    display: block;
+  }
+
+  .ai-carousel-slide-mobile-{{ ai_gen_id }} {
+    display: none;
+  }
+
   @media screen and (max-width: 749px) {
     .ai-carousel-slides-{{ ai_gen_id }} {
-      height: {{ block.settings.carousel_height | times: 0.6 }}px;
+      aspect-ratio: 4 / 5;
     }
 
     .ai-carousel-arrow-{{ ai_gen_id }} {
@@ -196,12 +220,17 @@
       right: 10px;
     }
 
+    /* keep the same percentage-based positions on mobile so the button stays in the same relative place */
     .ai-carousel-button-wrapper-{{ ai_gen_id }} {
-      {% if block.settings.button_position == 'top_left' or block.settings.button_position == 'center_left' or block.settings.button_position == 'bottom_left' %}
-        left: 10px;
-      {% elsif block.settings.button_position == 'top_right' or block.settings.button_position == 'center_right' or block.settings.button_position == 'bottom_right' %}
-        right: 10px;
-      {% endif %}
+      /* no px overrides here; percentages from the main rule will scale */
+    }
+
+    .ai-carousel-slide-desktop-{{ ai_gen_id }} {
+      display: none;
+    }
+
+    .ai-carousel-slide-mobile-{{ ai_gen_id }} {
+      display: block;
     }
   }
 {% endstyle %}
@@ -215,29 +244,43 @@
     {% for i in (1..5) %}
       {% liquid
         assign image_key = 'slide_' | append: i | append: '_image'
+        assign mobile_image_key = 'slide_' | append: i | append: '_mobile_image'
         assign button_text_key = 'slide_' | append: i | append: '_button_text'
         assign button_link_key = 'slide_' | append: i | append: '_button_link'
         assign show_button_key = 'slide_' | append: i | append: '_show_button'
 
         assign slide_image = block.settings[image_key]
+        assign mobile_image = block.settings[mobile_image_key]
         assign button_text = block.settings[button_text_key]
         assign button_link = block.settings[button_link_key]
         assign show_button = block.settings[show_button_key]
       %}
 
-      {% if slide_image %}
+      {% if slide_image or mobile_image %}
         <div
           class="ai-carousel-slide-{{ ai_gen_id }}{% if forloop.first %} active{% endif %}"
           data-slide-index="{{ forloop.index0 }}"
         >
-          <img
-            src="{{ slide_image | image_url: width: 2000 }}"
-            alt="{{ slide_image.alt | escape }}"
-            loading="lazy"
-            width="{{ slide_image.width }}"
-            height="{{ slide_image.height }}"
-            class="ai-carousel-slide-image-{{ ai_gen_id }}"
-          >
+          {% if slide_image %}
+            <img
+              src="{{ slide_image | image_url: width: 2000 }}"
+              alt="{{ slide_image.alt | escape }}"
+              loading="lazy"
+              width="{{ slide_image.width }}"
+              height="{{ slide_image.height }}"
+              class="ai-carousel-slide-image-{{ ai_gen_id }} ai-carousel-slide-desktop-{{ ai_gen_id }}"
+            >
+          {% endif %}
+          {% if mobile_image %}
+            <img
+              src="{{ mobile_image | image_url: width: 1000 }}"
+              alt="{{ mobile_image.alt | escape }}"
+              loading="lazy"
+              width="{{ mobile_image.width }}"
+              height="{{ mobile_image.height }}"
+              class="ai-carousel-slide-image-{{ ai_gen_id }} ai-carousel-slide-mobile-{{ ai_gen_id }}"
+            >
+          {% endif %}
           {% if show_button and button_text != blank %}
             <div class="ai-carousel-button-wrapper-{{ ai_gen_id }}">
               <a href="{{ button_link }}" class="ai-carousel-button-{{ ai_gen_id }}">
@@ -253,9 +296,11 @@
     {% for i in (1..5) %}
       {% liquid
         assign image_key = 'slide_' | append: i | append: '_image'
+        assign mobile_image_key = 'slide_' | append: i | append: '_mobile_image'
         assign slide_image = block.settings[image_key]
+        assign mobile_image = block.settings[mobile_image_key]
       %}
-      {% if slide_image %}
+      {% if slide_image or mobile_image %}
         {% assign has_images = true %}
         {% break %}
       {% endif %}
@@ -410,26 +455,17 @@
   "settings": [
     {
       "type": "header",
-      "content": "Carousel settings"
-    },
-    {
-      "type": "range",
-      "id": "carousel_height",
-      "min": 300,
-      "max": 800,
-      "step": 50,
-      "unit": "px",
-      "label": "Height",
-      "default": 500
-    },
-    {
-      "type": "header",
       "content": "Slide 1"
     },
     {
       "type": "image_picker",
       "id": "slide_1_image",
-      "label": "Image"
+      "label": "Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_1_mobile_image",
+      "label": "Image (Mobile)"
     },
     {
       "type": "checkbox",
@@ -455,7 +491,12 @@
     {
       "type": "image_picker",
       "id": "slide_2_image",
-      "label": "Image"
+      "label": "Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_2_mobile_image",
+      "label": "Image (Mobile)"
     },
     {
       "type": "checkbox",
@@ -481,7 +522,12 @@
     {
       "type": "image_picker",
       "id": "slide_3_image",
-      "label": "Image"
+      "label": "Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_3_mobile_image",
+      "label": "Image (Mobile)"
     },
     {
       "type": "checkbox",
@@ -507,7 +553,12 @@
     {
       "type": "image_picker",
       "id": "slide_4_image",
-      "label": "Image"
+      "label": "Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_4_mobile_image",
+      "label": "Image (Mobile)"
     },
     {
       "type": "checkbox",
@@ -533,7 +584,12 @@
     {
       "type": "image_picker",
       "id": "slide_5_image",
-      "label": "Image"
+      "label": "Image (Desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "slide_5_mobile_image",
+      "label": "Image (Mobile)"
     },
     {
       "type": "checkbox",
@@ -649,6 +705,12 @@
       "id": "dot_color",
       "label": "Color",
       "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dots",
+      "label": "Show dots",
+      "default": true
     }
   ],
   "presets": [
