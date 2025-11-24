@@ -11,31 +11,88 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
     },
-    "1755890068bfd1dd26": {
-      "type": "apps",
+    "brands_cards_4YGEpn": {
+      "type": "brands-cards",
       "blocks": {
-        "yotpo_loyalty_rewards_rewards_module_app_block_D7MjhN": {
-          "type": "shopify://apps/yotpo-loyalty-rewards/blocks/rewards-module-app-block/2f9660df-5018-4e02-9868-ee1fb88d6ccd",
+        "brand_card_nCfyRL": {
+          "type": "brand_card",
           "settings": {
-            "instance_placeholder_id": "588984"
+            "image": "shopify://shop_images/3dmaxpider_1.png",
+            "title": "3D Maxpider",
+            "link": "/brand/3d-maxpider"
+          }
+        },
+        "brand_card_tWFztY": {
+          "type": "brand_card",
+          "settings": {
+            "image": "shopify://shop_images/acl.png",
+            "title": "ACL",
+            "link": "/brand/acl"
+          }
+        },
+        "brand_card_QRDBnG": {
+          "type": "brand_card",
+          "settings": {
+            "image": "shopify://shop_images/act.png",
+            "title": "ACT",
+            "link": "/brand/act"
+          }
+        },
+        "brand_card_Ekf78m": {
+          "type": "brand_card",
+          "settings": {
+            "image": "shopify://shop_images/advan.png",
+            "title": "Advan",
+            "link": "/brand/advan"
+          }
+        },
+        "brand_card_CzKwiK": {
+          "type": "brand_card",
+          "settings": {
+            "image": "shopify://shop_images/aem-electronics.png",
+            "title": "AEM Electronics",
+            "link": "/brand/aem-electronics"
+          }
+        },
+        "brand_card_L8C9Rq": {
+          "type": "brand_card",
+          "settings": {
+            "image": "shopify://shop_images/aem-induction.png",
+            "title": "AEM Induction",
+            "link": "/brand/aem-induction"
+          }
+        },
+        "brand_card_mRrbhP": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Brand Name",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "yotpo_loyalty_rewards_rewards_module_app_block_D7MjhN"
+        "brand_card_nCfyRL",
+        "brand_card_tWFztY",
+        "brand_card_QRDBnG",
+        "brand_card_Ekf78m",
+        "brand_card_CzKwiK",
+        "brand_card_L8C9Rq",
+        "brand_card_mRrbhP"
       ],
+      "name": "Brand Cards",
       "settings": {
-        "include_margins": true
+        "heading": "Our Brands"
       }
     }
   },
   "order": [
     "main",
-    "1755890068bfd1dd26"
+    "brands_cards_4YGEpn"
   ]
 }
