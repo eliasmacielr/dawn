@@ -3683,6 +3683,8 @@ details-disclosure > details {
   animation: dash 1.4s ease-in-out infinite;
 }
 
+
+
 @media screen and (forced-colors: active) {
   .path {
     stroke: CanvasText;
@@ -3707,6 +3709,10 @@ details-disclosure > details {
 .loading__spinner:not(.hidden) ~ cart-remove-button {
   opacity: 50%;
 }
+
+body .transition-cover {
+    display: none;
+}​​
 
 .loading__spinner:not(.hidden) ~ cart-remove-button {
   pointer-events: none;
@@ -3752,4 +3758,11 @@ details-disclosure > details {
   .section-fitments-header .header-wrapper {
     display: none;
   }
+}
+
+predictive-search .spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  line-height: 0;
+  display: none;
 }
