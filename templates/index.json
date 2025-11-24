@@ -15,20 +15,23 @@
         "ai_gen_block_f00818c_RfaTdL": {
           "type": "ai_gen_block_f00818c",
           "settings": {
-            "carousel_height": 450,
             "slide_1_image": "shopify://shop_images/Early_bird_-_copy_no_buttn.png",
+            "slide_1_mobile_image": "shopify://shop_images/RSD-post-1.png",
             "slide_1_show_button": true,
             "slide_1_button_text": "Shop Early Access",
             "slide_1_button_link": "",
             "slide_2_image": "shopify://shop_images/Early_bird_-_grimmspeed_sale.png",
+            "slide_2_mobile_image": "shopify://shop_images/RSD-post-2.png",
             "slide_2_show_button": false,
             "slide_2_button_text": "Shop now",
             "slide_2_button_link": "",
             "slide_3_image": "shopify://shop_images/Early_bird_-_Konig.png",
+            "slide_3_mobile_image": "shopify://shop_images/RSD-post-3.png",
             "slide_3_show_button": false,
             "slide_3_button_text": "Shop now",
             "slide_3_button_link": "",
             "slide_4_image": "shopify://shop_images/Early_bird_-_Cobb.png",
+            "slide_4_mobile_image": "shopify://shop_images/RSD-post-4.png",
             "slide_4_show_button": false,
             "slide_4_button_text": "Shop now",
             "slide_4_button_link": "",
@@ -42,7 +45,8 @@
             "arrow_color": "#f7a01d",
             "arrow_icon_color": "#121212",
             "arrow_hover_color": "#f3f3f3",
-            "dot_color": "#ffffff"
+            "dot_color": "#ffffff",
+            "show_dots": true
           },
           "blocks": {}
         }
