@@ -67,6 +67,38 @@
             "title": "AEM Induction",
             "link": "/brand/aem-induction"
           }
+        },
+        "brand_card_YJWVLK": {
+          "type": "brand_card",
+          "settings": {
+            "image": "shopify://shop_images/aeromotive.png",
+            "title": "Aeromotive",
+            "link": "https://www.rallysportdirect.com/brand/aeromotive"
+          }
+        },
+        "brand_card_imxApf": {
+          "type": "brand_card",
+          "settings": {
+            "image": "shopify://shop_images/afe.png",
+            "title": "aFe",
+            "link": "https://www.rallysportdirect.com/brand/afe"
+          }
+        },
+        "brand_card_aRzjxQ": {
+          "type": "brand_card",
+          "settings": {
+            "image": "shopify://shop_images/Agency_Power.png",
+            "title": "Agency Power",
+            "link": "https://www.rallysportdirect.com/brand/agency-power"
+          }
+        },
+        "brand_card_ytPQzr": {
+          "type": "brand_card",
+          "settings": {
+            "image": "shopify://shop_images/air_lift.png",
+            "title": "Air Lift",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -75,7 +107,11 @@
         "brand_card_QRDBnG",
         "brand_card_Ekf78m",
         "brand_card_CzKwiK",
-        "brand_card_L8C9Rq"
+        "brand_card_L8C9Rq",
+        "brand_card_YJWVLK",
+        "brand_card_imxApf",
+        "brand_card_aRzjxQ",
+        "brand_card_ytPQzr"
       ],
       "name": "Brand Cards",
       "settings": {
