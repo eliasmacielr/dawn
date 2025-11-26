@@ -373,6 +373,13 @@
             "title": "Brand Name",
             "link": ""
           }
+        },
+        "brand_card_cBeMen": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Brand Name",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -424,7 +431,8 @@
         "brand_card_aJWmJy",
         "brand_card_FXaDBA",
         "brand_card_UQbaRz",
-        "brand_card_6JVnPM"
+        "brand_card_6JVnPM",
+        "brand_card_cBeMen"
       ],
       "name": "Brand Cards",
       "settings": {
