@@ -73,7 +73,7 @@
           "settings": {
             "image": "shopify://shop_images/aeromotive.png",
             "title": "Aeromotive",
-            "link": "https://www.rallysportdirect.com/brand/aeromotive"
+            "link": "/brand/aeromotive"
           }
         },
         "brand_card_imxApf": {
@@ -81,7 +81,7 @@
           "settings": {
             "image": "shopify://shop_images/afe.png",
             "title": "aFe",
-            "link": "https://www.rallysportdirect.com/brand/afe"
+            "link": "/brand/afe"
           }
         },
         "brand_card_aRzjxQ": {
@@ -89,7 +89,7 @@
           "settings": {
             "image": "shopify://shop_images/Agency_Power.png",
             "title": "Agency Power",
-            "link": "https://www.rallysportdirect.com/brand/agency-power"
+            "link": "/brand/agency-power"
           }
         },
         "brand_card_ytPQzr": {
@@ -97,7 +97,141 @@
           "settings": {
             "image": "shopify://shop_images/air_lift.png",
             "title": "Air Lift",
+            "link": "/brand/air-lift"
+          }
+        },
+        "brand_card_BBwFTX": {
+          "type": "brand_card",
+          "settings": {
+            "image": "shopify://shop_images/airaid.png",
+            "title": "AIRAID",
+            "link": "/brand/air-aid"
+          }
+        },
+        "brand_card_Cq9Wzq": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Alpha Rex USA",
+            "link": "/brand/alpha-rex-usa"
+          }
+        },
+        "brand_card_tTXwLN": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Alta",
             "link": ""
+          }
+        },
+        "brand_card_BMCRHk": {
+          "type": "brand_card",
+          "settings": {
+            "title": "AMS",
+            "link": "/brand/ams"
+          }
+        },
+        "brand_card_T3CEyW": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Anderson Composites",
+            "link": "/brand/anderson-composites"
+          }
+        },
+        "brand_card_3zU7D3": {
+          "type": "brand_card",
+          "settings": {
+            "title": "AP Racing",
+            "link": "/brand/ap-racing"
+          }
+        },
+        "brand_card_Wt7Yiq": {
+          "type": "brand_card",
+          "settings": {
+            "title": "APEX",
+            "link": "/brand/apex"
+          }
+        },
+        "brand_card_FCFNWi": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Apexi",
+            "link": "/brand/apexi"
+          }
+        },
+        "brand_card_XAUntp": {
+          "type": "brand_card",
+          "settings": {
+            "title": "APR",
+            "link": "/brand/apr"
+          }
+        },
+        "brand_card_bUwL8y": {
+          "type": "brand_card",
+          "settings": {
+            "title": "ARP",
+            "link": "/brand/arp"
+          }
+        },
+        "brand_card_hXHw4h": {
+          "type": "brand_card",
+          "settings": {
+            "title": "ATI",
+            "link": "/brand/ati"
+          }
+        },
+        "brand_card_JzDjAh": {
+          "type": "brand_card",
+          "settings": {
+            "title": "ATP Turbo",
+            "link": "/brand/atp-turbo"
+          }
+        },
+        "brand_card_PnB8nq": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Autometer",
+            "link": "/brand/autometer"
+          }
+        },
+        "brand_card_XFXdD9": {
+          "type": "brand_card",
+          "settings": {
+            "title": "AutoStyled",
+            "link": "/brand/autostyled"
+          }
+        },
+        "brand_card_VEhGTN": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Autotech",
+            "link": "/brand/Autotech"
+          }
+        },
+        "brand_card_yDimer": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Avest",
+            "link": "/brand/Avest"
+          }
+        },
+        "brand_card_QkweFt": {
+          "type": "brand_card",
+          "settings": {
+            "title": "AWE Tuning",
+            "link": "/brand/awe-tuning"
+          }
+        },
+        "brand_card_jnmLeb": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Baja Designs",
+            "link": "/brand/baja-designs"
+          }
+        },
+        "brand_card_geC97r": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Baxter Performance",
+            "link": "/brand/baxter-performance"
           }
         }
       },
@@ -111,7 +245,26 @@
         "brand_card_YJWVLK",
         "brand_card_imxApf",
         "brand_card_aRzjxQ",
-        "brand_card_ytPQzr"
+        "brand_card_ytPQzr",
+        "brand_card_BBwFTX",
+        "brand_card_Cq9Wzq",
+        "brand_card_tTXwLN",
+        "brand_card_BMCRHk",
+        "brand_card_T3CEyW",
+        "brand_card_3zU7D3",
+        "brand_card_Wt7Yiq",
+        "brand_card_FCFNWi",
+        "brand_card_XAUntp",
+        "brand_card_bUwL8y",
+        "brand_card_hXHw4h",
+        "brand_card_JzDjAh",
+        "brand_card_PnB8nq",
+        "brand_card_XFXdD9",
+        "brand_card_VEhGTN",
+        "brand_card_yDimer",
+        "brand_card_QkweFt",
+        "brand_card_jnmLeb",
+        "brand_card_geC97r"
       ],
       "name": "Brand Cards",
       "settings": {
