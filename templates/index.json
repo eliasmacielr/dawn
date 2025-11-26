@@ -324,7 +324,7 @@
             "arrow_icon_color": "#121212",
             "arrow_hover_color": "#f3f3f3",
             "dot_color": "#ffffff",
-            "show_dots": true
+            "show_dots": false
           },
           "blocks": {}
         }
