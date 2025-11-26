@@ -233,6 +233,146 @@
             "title": "Baxter Performance",
             "link": "/brand/baxter-performance"
           }
+        },
+        "brand_card_KEpGT7": {
+          "type": "brand_card",
+          "settings": {
+            "title": "BC Racing",
+            "link": "/brand/bc-racing"
+          }
+        },
+        "brand_card_EiWJan": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Beatrush",
+            "link": "/brand/beatrush"
+          }
+        },
+        "brand_card_6dPkKj": {
+          "type": "brand_card",
+          "settings": {
+            "title": "BilletWorkz",
+            "link": "/brand/billetworkz"
+          }
+        },
+        "brand_card_F4wgDC": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Bilstein",
+            "link": "/brand/bilstein"
+          }
+        },
+        "brand_card_wTqrMG": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Blitz",
+            "link": "/brand/blitz"
+          }
+        },
+        "brand_card_xeqA3B": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Blouch",
+            "link": "/brand/blouch"
+          }
+        },
+        "brand_card_aXzDWE": {
+          "type": "brand_card",
+          "settings": {
+            "title": "BLOX",
+            "link": "/brand/blox"
+          }
+        },
+        "brand_card_cTFxkE": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Boomba Racing",
+            "link": "/brand/boomba-racing"
+          }
+        },
+        "brand_card_N6A9QW": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Borla",
+            "link": "/brand/borla"
+          }
+        },
+        "brand_card_L4YKMB": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Bosch",
+            "link": "/brand/bosch"
+          }
+        },
+        "brand_card_kqMeXU": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Braille Battery",
+            "link": "/braille-battery"
+          }
+        },
+        "brand_card_xCwJwr": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Brembo",
+            "link": "/brand/brembo"
+          }
+        },
+        "brand_card_8WHTCz": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Brian Crower",
+            "link": "/brand/brian-crower"
+          }
+        },
+        "brand_card_Ch49B6": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Bride",
+            "link": "/brand/bride"
+          }
+        },
+        "brand_card_B3Vn3Q": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Buddy Club",
+            "link": "/brand/buddy-club"
+          }
+        },
+        "brand_card_pnJthx": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Carbing",
+            "link": "/brand/carbing"
+          }
+        },
+        "brand_card_aJWmJy": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Carbon Reproductions",
+            "link": "/brand/carbon-reproductions"
+          }
+        },
+        "brand_card_FXaDBA": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Centric",
+            "link": "/brand/centric"
+          }
+        },
+        "brand_card_UQbaRz": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Brand Name",
+            "link": ""
+          }
+        },
+        "brand_card_6JVnPM": {
+          "type": "brand_card",
+          "settings": {
+            "title": "Brand Name",
+            "link": ""
+          }
         }
       },
       "block_order": [
@@ -264,7 +404,27 @@
         "brand_card_yDimer",
         "brand_card_QkweFt",
         "brand_card_jnmLeb",
-        "brand_card_geC97r"
+        "brand_card_geC97r",
+        "brand_card_KEpGT7",
+        "brand_card_EiWJan",
+        "brand_card_6dPkKj",
+        "brand_card_F4wgDC",
+        "brand_card_wTqrMG",
+        "brand_card_xeqA3B",
+        "brand_card_aXzDWE",
+        "brand_card_cTFxkE",
+        "brand_card_N6A9QW",
+        "brand_card_L4YKMB",
+        "brand_card_kqMeXU",
+        "brand_card_xCwJwr",
+        "brand_card_8WHTCz",
+        "brand_card_Ch49B6",
+        "brand_card_B3Vn3Q",
+        "brand_card_pnJthx",
+        "brand_card_aJWmJy",
+        "brand_card_FXaDBA",
+        "brand_card_UQbaRz",
+        "brand_card_6JVnPM"
       ],
       "name": "Brand Cards",
       "settings": {
