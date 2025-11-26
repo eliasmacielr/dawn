@@ -294,6 +294,46 @@
         "color_scheme": ""
       }
     },
+    "blocks_MhALQr": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f00818c_bqFX97": {
+          "type": "ai_gen_block_f00818c",
+          "settings": {
+            "slide_1_image": "shopify://shop_images/dsc03023-crop_9e38cc11-5629-4362-a6ca-fbc659d97a4d.jpg",
+            "slide_1_show_button": true,
+            "slide_1_button_text": "View Our Latest Build",
+            "slide_1_button_link": "/blogs/rsd-vb-wrx-build",
+            "slide_2_show_button": false,
+            "slide_2_button_text": "Shop now",
+            "slide_2_button_link": "",
+            "slide_3_show_button": false,
+            "slide_3_button_text": "Shop now",
+            "slide_3_button_link": "",
+            "slide_4_show_button": false,
+            "slide_4_button_text": "Shop now",
+            "slide_4_button_link": "",
+            "slide_5_show_button": false,
+            "slide_5_button_text": "Shop now",
+            "slide_5_button_link": "",
+            "button_position": "bottom_left",
+            "button_color": "#334fb4",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#f7a01d",
+            "arrow_color": "#f7a01d",
+            "arrow_icon_color": "#121212",
+            "arrow_hover_color": "#f3f3f3",
+            "dot_color": "#ffffff",
+            "show_dots": true
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f00818c_bqFX97"
+      ],
+      "settings": {}
+    },
     "image_banner_HUfAiz": {
       "type": "image-banner",
       "blocks": {
@@ -314,8 +354,8 @@
         "buttons_C6Fgx9": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "",
-            "button_link_1": "",
+            "button_label_1": "View Our Latest Build",
+            "button_link_1": "/blogs/rsd-vb-wrx-build",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -328,9 +368,10 @@
         "text_KVXtfJ",
         "buttons_C6Fgx9"
       ],
+      "disabled": true,
       "name": "t:sections.image-banner.presets.name",
       "settings": {
-        "image": "shopify://shop_images/Early_bird_-_copy_no_buttn.png",
+        "image": "shopify://shop_images/dsc03023-crop_9e38cc11-5629-4362-a6ca-fbc659d97a4d.jpg",
         "image_overlay_opacity": 0,
         "image_height": "adapt",
         "image_behavior": "none",
@@ -385,6 +426,7 @@
     "shop_by_categories_efE7JY",
     "featured_collections_UwYTiM",
     "featured_collections_3z3GjU",
+    "blocks_MhALQr",
     "image_banner_HUfAiz",
     "featured_productsv2_iYT83w",
     "featured_blog_wnRWTM",
