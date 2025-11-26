@@ -301,6 +301,7 @@
           "type": "ai_gen_block_f00818c",
           "settings": {
             "slide_1_image": "shopify://shop_images/dsc03023-crop_9e38cc11-5629-4362-a6ca-fbc659d97a4d.jpg",
+            "slide_1_mobile_image": "shopify://shop_images/mobile_banner_build.png",
             "slide_1_show_button": true,
             "slide_1_button_text": "View Our Latest Build",
             "slide_1_button_link": "/blogs/rsd-vb-wrx-build",
