@@ -1,0 +1,158 @@
+{% comment %}
+  Brand Cards Section
+  Reads from a local JSON file in the assets folder
+{% endcomment %}
+
+{% assign brands_json = 'brands.json' | asset_url | split: '?' | first %}
+
+<div class="brand-cards-section">
+  <div class="brand-cards-container" id="brand-cards-grid">
+    <!-- Cards will be populated via JavaScript -->
+  </div>
+</div>
+
+<style>
+  .brand-cards-section {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .brand-cards-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+  }
+
+  .brand-card {
+    display: block;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 8px;
+    padding: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  {% comment %} .brand-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: #333;
+  } {% endcomment %}
+
+  .brand-card-image {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+  }
+
+  .brand-card-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+  }
+
+  .brand-card-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    text-transform: capitalize;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .brand-cards-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .brand-cards-container {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .brand-card {
+      padding: 16px;
+    }
+
+    .brand-card-image {
+      height: 80px;
+    }
+
+    .brand-card-title {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .brand-cards-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    fetch('{{ brands_json }}')
+      .then((response) => response.json())
+      .then((data) => {
+        const container = document.getElementById('brand-cards-grid');
+
+        // Loop through each brand in the JSON
+        Object.keys(data).forEach(function (brandKey) {
+          const brand = data[brandKey];
+
+          // Create card element
+          const card = document.createElement('a');
+          card.href = brand.link;
+          card.className = 'brand-card';
+
+          // Create image container
+          const imageDiv = document.createElement('div');
+          imageDiv.className = 'brand-card-image';
+
+          const img = document.createElement('img');
+          img.src = brand.image;
+          img.alt = brandKey;
+          img.loading = 'lazy';
+
+          imageDiv.appendChild(img);
+
+          // Create title
+          const title = document.createElement('h3');
+          title.className = 'brand-card-title';
+          title.textContent = brandKey;
+
+          // Append elements to card
+          card.appendChild(imageDiv);
+          card.appendChild(title);
+
+          // Append card to container
+          container.appendChild(card);
+        });
+      })
+      .catch((error) => {
+        console.error('Error loading brands:', error);
+      });
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Brand Cards",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Brand Cards"
+    }
+  ]
+}
+{% endschema %}
