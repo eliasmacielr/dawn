@@ -40,27 +40,27 @@
             >
           {%- endif -%}
           <span class="mobile-only">
-            {% comment %}
-              <p class="announcement-bar__message h5 mobile-only">
-                <span class="mobile-only">
-                  {{- section.blocks.first.settings.text_mobile | default: section.blocks.first.settings.text -}}
-                </span>
+            <p class="announcement-bar__message h5 mobile-only">
+              <span class="mobile-only">
+                {{- section.blocks.first.settings.text_mobile | default: section.blocks.first.settings.text -}}
+              </span>
+              {% comment %}
                 {%- if section.blocks.first.settings.link != blank -%}
                   {{- 'icon-arrow.svg' | inline_asset_content -}}
                 {%- endif -%}
-              </p>
-            {% endcomment %}
+              {% endcomment %}
+            </p>
           </span>
-          {% comment %}
-            <span class="desktop-only-announcement">
-              <p class="announcement-bar__message h5 desktop-only">
-                <span class="desktop-only">{{ section.blocks.first.settings.text }}</span>
+          <span class="desktop-only-announcement">
+            <p class="announcement-bar__message h5 desktop-only">
+              <span class="desktop-only">{{ section.blocks.first.settings.text }}</span>
+              {% comment %}
                 {%- if section.blocks.first.settings.link != blank -%}
                   {{- 'icon-arrow.svg' | inline_asset_content -}}
                 {%- endif -%}
-              </p>
-            </span>
-          {% endcomment %}
+              {% endcomment %}
+            </p>
+          </span>
           {%- if section.blocks.first.settings.link != blank -%}
             </a>
           {%- endif -%}
