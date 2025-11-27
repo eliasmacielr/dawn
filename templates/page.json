@@ -359,27 +359,6 @@
             "title": "Centric",
             "link": "/brand/centric"
           }
-        },
-        "brand_card_UQbaRz": {
-          "type": "brand_card",
-          "settings": {
-            "title": "Brand Name",
-            "link": ""
-          }
-        },
-        "brand_card_6JVnPM": {
-          "type": "brand_card",
-          "settings": {
-            "title": "Brand Name",
-            "link": ""
-          }
-        },
-        "brand_card_cBeMen": {
-          "type": "brand_card",
-          "settings": {
-            "title": "Brand Name",
-            "link": ""
-          }
         }
       },
       "block_order": [
@@ -429,10 +408,7 @@
         "brand_card_B3Vn3Q",
         "brand_card_pnJthx",
         "brand_card_aJWmJy",
-        "brand_card_FXaDBA",
-        "brand_card_UQbaRz",
-        "brand_card_6JVnPM",
-        "brand_card_cBeMen"
+        "brand_card_FXaDBA"
       ],
       "name": "Brand Cards",
       "settings": {
