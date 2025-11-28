@@ -264,8 +264,8 @@
           "type": "showcase_item",
           "settings": {
             "collection": "",
-            "custom_url": "/search?q=olm%20evolution",
-            "custom_image": "shopify://shop_images/olm-evolution-taillights-homepage-banners-614x306-rsd.jpg",
+            "custom_url": "https://www.rallysportdirect.com/search?q=olm+taillights",
+            "custom_image": "shopify://shop_images/OLM_Blue_CR_4_2400x1800_e96795fb-ce21-465f-8c9b-7bdaf9f81f58.webp",
             "title": "OLM Tailights",
             "subtitle": "Featuring discounts of 15% off for Black Friday / Cyber Monday!",
             "button_text": "Shop Now"
