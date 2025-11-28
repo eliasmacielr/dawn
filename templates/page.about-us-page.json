@@ -106,11 +106,27 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "video_tmm3BG": {
+      "type": "video",
+      "name": "t:sections.video.presets.name",
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "enable_video_looping": false,
+        "video_url": "https://www.youtube.com/watch?v=GOCqWW3HYzY",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
     "rich_text_RAFg3N",
-    "statistics_dWgAi9"
+    "statistics_dWgAi9",
+    "video_tmm3BG"
   ]
 }
