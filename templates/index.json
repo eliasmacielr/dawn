@@ -62,10 +62,10 @@
         "ai_gen_block_7c3be73_zqaPyz": {
           "type": "ai_gen_block_7c3be73",
           "settings": {
-            "heading": "Black Friday Is Coming, Get Ready to Launch!",
+            "heading": "Black Friday is here!",
             "end_date": "2025-11-28",
             "end_time": "00:00",
-            "completion_message": "<p>Black Friday has begun!</p>",
+            "completion_message": "<p>Don't get caught with stock parts.</p>",
             "show_days": true,
             "show_hours": true,
             "show_minutes": true,
