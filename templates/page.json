@@ -410,14 +410,27 @@
         "brand_card_aJWmJy",
         "brand_card_FXaDBA"
       ],
+      "disabled": true,
       "name": "Brand Cards",
       "settings": {
         "heading": "Our Brands"
+      }
+    },
+    "brands_8jkGGd": {
+      "type": "brands",
+      "name": "Brands",
+      "settings": {
+        "title": "Our Brands",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     }
   },
   "order": [
     "main",
-    "brands_cards_4YGEpn"
+    "brands_cards_4YGEpn",
+    "brands_8jkGGd"
   ]
 }
