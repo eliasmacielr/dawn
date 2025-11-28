@@ -241,7 +241,7 @@
             "custom_url": "/search?q=factionfab&page=1&inventory=in-stock",
             "custom_image": "shopify://shop_images/factionfab-homepage-banners-614x306-rsd.jpg",
             "title": "FactionFab",
-            "subtitle": "Shop All FactionFab Parts",
+            "subtitle": "FactionFab 15% Off For Black Friday / Cyber Monday!",
             "button_text": "Shop Now"
           }
         }
@@ -266,8 +266,8 @@
             "collection": "",
             "custom_url": "/search?q=olm%20evolution",
             "custom_image": "shopify://shop_images/olm-evolution-taillights-homepage-banners-614x306-rsd.jpg",
-            "title": "OLM Evolution Tailights",
-            "subtitle": "Upgrade Them Here!",
+            "title": "OLM Tailights",
+            "subtitle": "Featuring discounts of 15% off for Black Friday / Cyber Monday!",
             "button_text": "Shop Now"
           }
         },
