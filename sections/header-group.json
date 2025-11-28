@@ -17,9 +17,9 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "<p>Check Out Our <strong>2025 Black Friday Specials here! </strong>| <strong>Free Shipping on Orders Over $199</strong></p><p></p>",
-            "text_mobile": "<p>Spend $199+ to qualify for Free Shipping!</p>",
-            "link": "/blogs/rallysport-directs-guide-to-2025-black-friday-deals-blog"
+            "text": "<p><strong>Black Friday Specials Live! </strong>| <strong>Free Shipping on Orders Over $199</strong></p><p></p>",
+            "text_mobile": "<p>Black Friday Specials Live!</p>",
+            "link": "https://www.rallysportdirect.com/blogs/news/rallysport-directs-guide-to-2025-black-friday-deals"
           }
         }
       },
