@@ -61,10 +61,56 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "statistics_dWgAi9": {
+      "type": "statistics",
+      "blocks": {
+        "statistic_nef8VP": {
+          "type": "statistic",
+          "settings": {
+            "title": "We were founded in",
+            "value": "2003"
+          }
+        },
+        "statistic_ngTQFY": {
+          "type": "statistic",
+          "settings": {
+            "title": "Team members",
+            "value": "300+"
+          }
+        },
+        "statistic_mdnpLV": {
+          "type": "statistic",
+          "settings": {
+            "title": "Amazing customers",
+            "value": "50K+"
+          }
+        },
+        "statistic_KdmTeh": {
+          "type": "statistic",
+          "settings": {
+            "title": "Car parts",
+            "value": "100K+"
+          }
+        }
+      },
+      "block_order": [
+        "statistic_nef8VP",
+        "statistic_ngTQFY",
+        "statistic_mdnpLV",
+        "statistic_KdmTeh"
+      ],
+      "name": "Statistics",
+      "settings": {
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
     "main",
-    "rich_text_RAFg3N"
+    "rich_text_RAFg3N",
+    "statistics_dWgAi9"
   ]
 }
