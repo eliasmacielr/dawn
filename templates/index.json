@@ -417,6 +417,23 @@
     "1763044913a57bbb22": {
       "type": "_blocks",
       "settings": {}
+    },
+    "image_banner_q4XMVt": {
+      "type": "image-banner",
+      "name": "t:sections.image-banner.presets.name",
+      "settings": {
+        "image": "shopify://shop_images/Section_3.png",
+        "image_overlay_opacity": 0,
+        "image_height": "adapt",
+        "image_behavior": "none",
+        "desktop_content_position": "middle-center",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "",
+        "stack_images_on_mobile": true,
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
     }
   },
   "order": [
@@ -431,6 +448,7 @@
     "image_banner_HUfAiz",
     "featured_productsv2_iYT83w",
     "featured_blog_wnRWTM",
-    "1763044913a57bbb22"
+    "1763044913a57bbb22",
+    "image_banner_q4XMVt"
   ]
 }
