@@ -17,8 +17,8 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "<p><strong>Black Friday Specials Live! </strong>| <strong>Free Shipping on Orders Over $199</strong></p><p></p>",
-            "text_mobile": "<p><strong>View Live Black Friday Specials Here!</strong></p>",
+            "text": "<p><strong>Cyber Monday Specials Live! </strong>| <strong>Free Shipping on Orders Over $199</strong></p><p></p>",
+            "text_mobile": "<p><strong>View Cyber Monday Specials Here!</strong></p>",
             "link": "https://www.rallysportdirect.com/blogs/news/rallysport-directs-guide-to-2025-black-friday-deals"
           }
         }
