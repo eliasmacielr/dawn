@@ -323,33 +323,35 @@
   </div>
 
   {% if has_images %}
-    <button class="ai-carousel-arrow-{{ ai_gen_id }} prev" aria-label="Previous slide">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polyline points="15 18 9 12 15 6"></polyline>
-      </svg>
-    </button>
+    {% if block.settings.show_arrows %}
+      <button class="ai-carousel-arrow-{{ ai_gen_id }} prev" aria-label="Previous slide">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
 
-    <button class="ai-carousel-arrow-{{ ai_gen_id }} next" aria-label="Next slide">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg>
-    </button>
+      <button class="ai-carousel-arrow-{{ ai_gen_id }} next" aria-label="Next slide">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    {% endif %}
 
     {% if block.settings.show_dots %}
       <div class="ai-carousel-dots-{{ ai_gen_id }}"></div>
@@ -683,6 +685,12 @@
     {
       "type": "header",
       "content": "Arrow style"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_arrows",
+      "label": "Show arrows",
+      "default": true
     },
     {
       "type": "color",
