@@ -40,16 +40,14 @@
             >
           {%- endif -%}
           <span class="mobile-only">
-            <p class="announcement-bar__message h5 mobile-only">
-              <span class="mobile-only">
-                {{- section.blocks.first.settings.text_mobile | default: section.blocks.first.settings.text -}}
-              </span>
-              {% comment %}
-                {%- if section.blocks.first.settings.link != blank -%}
-                  {{- 'icon-arrow.svg' | inline_asset_content -}}
-                {%- endif -%}
-              {% endcomment %}
-            </p>
+            <span class="mobile-only">
+              {{- section.blocks.first.settings.text_mobile | default: section.blocks.first.settings.text -}}
+            </span>
+            {% comment %}
+              {%- if section.blocks.first.settings.link != blank -%}
+                {{- 'icon-arrow.svg' | inline_asset_content -}}
+              {%- endif -%}
+            {% endcomment %}
           </span>
           <span class="desktop-only-announcement">
             <p class="announcement-bar__message h5 desktop-only">
@@ -187,7 +185,14 @@
       display: none;
     }
     .mobile-only {
-      display: inline;
+      display: inline-flex;
+      font-size: 1.4rem;
+      font-weight: 500;
+      background-color: white;
+      height: 32px;
+      align-items: center;
+      border-radius: 16px;
+      padding: 0 12px;
     }
   }
   @media screen and (min-width: 750px) {
