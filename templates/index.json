@@ -15,6 +15,48 @@
         "ai_gen_block_f00818c_RfaTdL": {
           "type": "ai_gen_block_f00818c",
           "settings": {
+            "slide_1_image": "shopify://shop_images/Section_3.png",
+            "slide_1_mobile_image": "shopify://shop_images/RSD-Cybermonday-giftcard.jpg",
+            "slide_1_show_button": true,
+            "slide_1_button_text": "Shop Cyber Monday Deals",
+            "slide_1_button_link": "https://www.rallysportdirect.com/blogs/news/rallysport-directs-guide-to-2025-black-friday-deals",
+            "slide_2_show_button": true,
+            "slide_2_button_text": "Shop All Whiteline",
+            "slide_2_button_link": "https://www.rallysportdirect.com/brand/whiteline",
+            "slide_3_show_button": true,
+            "slide_3_button_text": "Shop FactionFab!",
+            "slide_3_button_link": "https://www.rallysportdirect.com/brand/super-pro",
+            "slide_4_show_button": true,
+            "slide_4_button_text": "Shop Cobb!",
+            "slide_4_button_link": "https://www.rallysportdirect.com/brand/cobb-tuning",
+            "slide_5_show_button": false,
+            "slide_5_button_text": "Shop now",
+            "slide_5_button_link": "",
+            "button_position": "bottom_center",
+            "button_color": "#2777cd",
+            "button_text_color": "#000000",
+            "button_hover_color": "#f7a01d",
+            "show_arrows": false,
+            "arrow_color": "#f7a01d",
+            "arrow_icon_color": "#121212",
+            "arrow_hover_color": "#f3f3f3",
+            "dot_color": "#ffffff",
+            "show_dots": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f00818c_RfaTdL"
+      ],
+      "settings": {}
+    },
+    "blocks_f8UWPr": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f00818c_LBqKUd": {
+          "type": "ai_gen_block_f00818c",
+          "settings": {
             "slide_1_image": "shopify://shop_images/Blackfriday-base.png",
             "slide_1_mobile_image": "shopify://shop_images/rsd-mobile-generic.jpg",
             "slide_1_show_button": true,
@@ -53,8 +95,9 @@
         }
       },
       "block_order": [
-        "ai_gen_block_f00818c_RfaTdL"
+        "ai_gen_block_f00818c_LBqKUd"
       ],
+      "disabled": true,
       "settings": {}
     },
     "17630449320df0b1dc": {
@@ -483,6 +526,7 @@
   },
   "order": [
     "1763627927e48fd713",
+    "blocks_f8UWPr",
     "17630449320df0b1dc",
     "1763152749fc663bb3",
     "featured_productsv2_dbFqgz",
