@@ -42,6 +42,7 @@
             "button_color": "#f7a01d",
             "button_text_color": "#000000",
             "button_hover_color": "#f7a01d",
+            "show_arrows": true,
             "arrow_color": "#f7a01d",
             "arrow_icon_color": "#121212",
             "arrow_hover_color": "#f3f3f3",
@@ -300,6 +301,48 @@
         "ai_gen_block_f00818c_bqFX97": {
           "type": "ai_gen_block_f00818c",
           "settings": {
+            "slide_1_image": "shopify://shop_images/Section_4.png",
+            "slide_1_mobile_image": "shopify://shop_images/RSD-Cybermonday-FLATOUT.jpg",
+            "slide_1_show_button": true,
+            "slide_1_button_text": "",
+            "slide_1_button_link": "/blogs/news/rallysport-directs-used-vb-wrx-adventure",
+            "slide_2_show_button": false,
+            "slide_2_button_text": "Shop now",
+            "slide_2_button_link": "",
+            "slide_3_show_button": false,
+            "slide_3_button_text": "Shop now",
+            "slide_3_button_link": "",
+            "slide_4_show_button": false,
+            "slide_4_button_text": "Shop now",
+            "slide_4_button_link": "",
+            "slide_5_show_button": false,
+            "slide_5_button_text": "Shop now",
+            "slide_5_button_link": "",
+            "button_position": "bottom_left",
+            "button_color": "#334fb4",
+            "button_text_color": "#ffffff",
+            "button_hover_color": "#f7a01d",
+            "show_arrows": false,
+            "arrow_color": "#f7a01d",
+            "arrow_icon_color": "#121212",
+            "arrow_hover_color": "#f3f3f3",
+            "dot_color": "#ffffff",
+            "show_dots": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_f00818c_bqFX97"
+      ],
+      "settings": {}
+    },
+    "blocks_pYNnje": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_f00818c_9RykeJ": {
+          "type": "ai_gen_block_f00818c",
+          "settings": {
             "slide_1_image": "shopify://shop_images/dsc03023-crop_9e38cc11-5629-4362-a6ca-fbc659d97a4d.jpg",
             "slide_1_mobile_image": "shopify://shop_images/mobile_banner_build.png",
             "slide_1_show_button": true,
@@ -321,6 +364,7 @@
             "button_color": "#334fb4",
             "button_text_color": "#ffffff",
             "button_hover_color": "#f7a01d",
+            "show_arrows": true,
             "arrow_color": "#f7a01d",
             "arrow_icon_color": "#121212",
             "arrow_hover_color": "#f3f3f3",
@@ -331,8 +375,9 @@
         }
       },
       "block_order": [
-        "ai_gen_block_f00818c_bqFX97"
+        "ai_gen_block_f00818c_9RykeJ"
       ],
+      "disabled": true,
       "settings": {}
     },
     "image_banner_HUfAiz": {
@@ -445,6 +490,7 @@
     "featured_collections_UwYTiM",
     "featured_collections_3z3GjU",
     "blocks_MhALQr",
+    "blocks_pYNnje",
     "image_banner_HUfAiz",
     "featured_productsv2_iYT83w",
     "featured_blog_wnRWTM",
