@@ -105,9 +105,9 @@
                   {% else %}
                     href="{{ block.settings.button_link }}"
                   {% endif %}
-                  class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}"
+                  class="button{% if block.settings.button_style_secondary %} button--secondary{% else %} button--primary{% endif %}{% if block.settings.button_color != blank %} custom-banner-button-solid{% endif %}"
                   {% if block.settings.button_color != blank or block.settings.button_text_color != blank %}
-                    style="{% if block.settings.button_color != blank %}background-color: {{ block.settings.button_color }};{% endif %}{% if block.settings.button_text_color != blank %} color: {{ block.settings.button_text_color }};{% endif %}"
+                    style="{% if block.settings.button_color != blank %}--alpha-button-background: 1; background-color: {{ block.settings.button_color }} !important;{% endif %}{% if block.settings.button_text_color != blank %} color: {{ block.settings.button_text_color }} !important;{% endif %}"
                   {% endif %}
                 >
                   {{- block.settings.button_label | escape -}}
@@ -119,6 +119,17 @@
     </div>
   </div>
 </div>
+
+{%- style -%}
+  #CustomBanner-{{ section.id }} .custom-banner-button-solid {
+    --alpha-button-background: 1 !important;
+  }
+  #CustomBanner-{{ section.id }} .custom-banner-button-solid::after {
+    box-shadow: 0 0 0 calc(var(--buttons-border-width) + var(--border-offset))
+        rgba(var(--color-button-text), var(--border-opacity)),
+      0 0 0 var(--buttons-border-width) currentColor !important;
+  }
+{%- endstyle -%}
 
 {% schema %}
 {
