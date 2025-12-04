@@ -414,10 +414,59 @@
       "settings": {
         "heading": "Our Brands"
       }
+    },
+    "custom_banner_46xxxD": {
+      "type": "custom-banner",
+      "blocks": {
+        "heading_EQ9K7M": {
+          "type": "heading",
+          "settings": {
+            "heading": "Custom Banner Heading",
+            "heading_size": "h1"
+          }
+        },
+        "text_eKHFnQ": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "Add your custom banner text here",
+            "text_style": "body"
+          }
+        },
+        "button_gxVyqa": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_color": "#0188ca",
+            "button_text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "heading_EQ9K7M",
+        "text_eKHFnQ",
+        "button_gxVyqa"
+      ],
+      "name": "Custom Banner",
+      "settings": {
+        "image": "shopify://shop_images/rsd-price-match-1440x440-withwords.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "small",
+        "image_behavior": "none",
+        "desktop_content_position": "bottom-left",
+        "desktop_content_alignment": "center",
+        "show_text_box": true,
+        "color_scheme": "scheme-5",
+        "mobile_content_alignment": "center",
+        "show_text_below": true
+      }
     }
   },
   "order": [
     "main",
-    "brands_cards_4YGEpn"
+    "brands_cards_4YGEpn",
+    "custom_banner_46xxxD"
   ]
 }
