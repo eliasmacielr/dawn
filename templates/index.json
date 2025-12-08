@@ -286,7 +286,7 @@
             "custom_url": "/search?q=factionfab&page=1&inventory=in-stock",
             "custom_image": "shopify://shop_images/Background.png",
             "title": "FactionFab",
-            "subtitle": "FactionFab 15% Off For Cyber Week!",
+            "subtitle": "Shop FactionFab",
             "button_text": "Shop Now"
           }
         }
@@ -312,7 +312,7 @@
             "custom_url": "https://www.rallysportdirect.com/search?q=olm+taillights",
             "custom_image": "shopify://shop_images/Background_3.png",
             "title": "OLM Tailights",
-            "subtitle": "Featuring discounts of 15% off for Cyber Week!",
+            "subtitle": "Shop OLM",
             "button_text": "Shop Now"
           }
         },
