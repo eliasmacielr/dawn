@@ -72,3 +72,46 @@ input::-webkit-search-decoration {
 .template-search__results {
   position: relative;
 }
+
+/* Mobile-specific search label text */
+@media screen and (max-width: 749px) {
+  .search .field__label,
+  .search-modal__form .field__label,
+  form.search .field__label,
+  form.search-modal__form .field__label {
+    color: transparent !important;
+  }
+  
+  .search .field__label::after,
+  .search-modal__form .field__label::after,
+  form.search .field__label::after,
+  form.search-modal__form .field__label::after {
+    content: 'Search' !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    color: rgba(var(--color-foreground), 0.75) !important;
+    font-size: 1.6rem !important;
+    line-height: 1.5 !important;
+    letter-spacing: 0.1rem !important;
+    pointer-events: none !important;
+    white-space: nowrap !important;
+    transition: top var(--duration-short) ease, font-size var(--duration-short) ease !important;
+  }
+  
+  .search .field__input:focus ~ .field__label::after,
+  .search .field__input:not(:placeholder-shown) ~ .field__label::after,
+  .search .field__input:-webkit-autofill ~ .field__label::after,
+  .search-modal__form .field__input:focus ~ .field__label::after,
+  .search-modal__form .field__input:not(:placeholder-shown) ~ .field__label::after,
+  .search-modal__form .field__input:-webkit-autofill ~ .field__label::after,
+  form.search .field__input:focus ~ .field__label::after,
+  form.search .field__input:not(:placeholder-shown) ~ .field__label::after,
+  form.search .field__input:-webkit-autofill ~ .field__label::after,
+  form.search-modal__form .field__input:focus ~ .field__label::after,
+  form.search-modal__form .field__input:not(:placeholder-shown) ~ .field__label::after,
+  form.search-modal__form .field__input:-webkit-autofill ~ .field__label::after {
+    font-size: 1rem !important;
+    letter-spacing: 0.04rem !important;
+  }
+}
