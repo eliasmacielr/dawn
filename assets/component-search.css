@@ -86,7 +86,7 @@ input::-webkit-search-decoration {
   .search-modal__form .field__label::after,
   form.search .field__label::after,
   form.search-modal__form .field__label::after {
-    content: 'Search' !important;
+    content: 'Search Brand or try “WRX clutch"' !important;
     position: absolute !important;
     left: 0 !important;
     top: 0 !important;
