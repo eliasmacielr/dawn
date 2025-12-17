@@ -11,9 +11,21 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
+      }
+    },
+    "brands_8jkGGd": {
+      "type": "brands",
+      "name": "Brands",
+      "settings": {
+        "title": "Our Brands",
+        "heading_size": "h1",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
       }
     },
     "brands_cards_4YGEpn": {
@@ -418,6 +430,7 @@
   },
   "order": [
     "main",
+    "brands_8jkGGd",
     "brands_cards_4YGEpn"
   ]
 }
