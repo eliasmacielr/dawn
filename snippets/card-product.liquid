@@ -147,8 +147,8 @@
       </div>
       <div class="card__content">
         <div class="card__information">
-          {%- if card_product.selected_or_first_available_variant.inventory_quantity == 0 -%}
-            <div class="custom-carousel-stock out-of-stock">Out of Stock</div>
+          {%- if card_product.selected_or_first_available_variant.inventory_quantity <= 0 -%}
+            <div class="custom-carousel-stock out-of-stock">Ships From Manufacturer</div>
           {% else %}
             <div class="custom-carousel-stock">
               {{ card_product.selected_or_first_available_variant.inventory_quantity }} in stock
