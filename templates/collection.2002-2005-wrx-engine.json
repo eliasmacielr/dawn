@@ -28,7 +28,6 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 5,
@@ -113,7 +112,7 @@
   "order": [
     "banner",
     "collection-tree",
-    "product-grid",
-    "collection_list_WLH3NC"
+    "collection_list_WLH3NC",
+    "product-grid"
   ]
 }
