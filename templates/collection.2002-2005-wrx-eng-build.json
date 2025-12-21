@@ -28,7 +28,6 @@
     },
     "product-grid": {
       "type": "main-collection-product-grid",
-      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 5,
@@ -50,12 +49,6 @@
     "collection_list_WLH3NC": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_9qUPw3": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "2002-2005-wrx-gaskets-seals"
-          }
-        },
         "featured_collection_mgqbq3": {
           "type": "featured_collection",
           "settings": {
@@ -92,6 +85,12 @@
             "collection": "2002-2005-wrx-oil-system"
           }
         },
+        "featured_collection_9qUPw3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "2002-2005-wrx-gaskets-seals"
+          }
+        },
         "featured_collection_JHfzzw": {
           "type": "featured_collection",
           "settings": {
@@ -106,13 +105,13 @@
         }
       },
       "block_order": [
-        "featured_collection_9qUPw3",
         "featured_collection_mgqbq3",
         "featured_collection_CFWVzX",
         "featured_collection_UaGxQm",
         "featured_collection_nV3NYP",
         "featured_collection_gkY4zx",
         "featured_collection_6kNeah",
+        "featured_collection_9qUPw3",
         "featured_collection_JHfzzw",
         "featured_collection_k7VnGN"
       ],
@@ -134,7 +133,7 @@
   "order": [
     "banner",
     "collection-tree",
-    "product-grid",
-    "collection_list_WLH3NC"
+    "collection_list_WLH3NC",
+    "product-grid"
   ]
 }
