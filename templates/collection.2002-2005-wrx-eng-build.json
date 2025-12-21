@@ -29,12 +29,6 @@
     "collection_list_WLH3NC": {
       "type": "collection-list",
       "blocks": {
-        "featured_collection_mgqbq3": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "2002-2005-wrx-engine-dress-up"
-          }
-        },
         "featured_collection_CFWVzX": {
           "type": "featured_collection",
           "settings": {
@@ -59,10 +53,10 @@
             "collection": "2002-2005-wrx-rods"
           }
         },
-        "featured_collection_6kNeah": {
+        "featured_collection_8e6Qea": {
           "type": "featured_collection",
           "settings": {
-            "collection": "2002-2005-wrx-oil-system"
+            "collection": "2002-2005-wrx-engine-bearings"
           }
         },
         "featured_collection_9qUPw3": {
@@ -82,18 +76,24 @@
           "settings": {
             "collection": "2002-2005-wrx-cams-gears"
           }
+        },
+        "featured_collection_BbgFxc": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "2002-2005-wrx-valvetrain"
+          }
         }
       },
       "block_order": [
-        "featured_collection_mgqbq3",
         "featured_collection_CFWVzX",
         "featured_collection_UaGxQm",
         "featured_collection_nV3NYP",
         "featured_collection_gkY4zx",
-        "featured_collection_6kNeah",
+        "featured_collection_8e6Qea",
         "featured_collection_9qUPw3",
         "featured_collection_JHfzzw",
-        "featured_collection_k7VnGN"
+        "featured_collection_k7VnGN",
+        "featured_collection_BbgFxc"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
