@@ -50,6 +50,30 @@
     "collection_list_WLH3NC": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_UaGxQm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "2002-2005-wrx-engine-dress-up"
+          }
+        },
+        "featured_collection_CFWVzX": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "2002-2005-wrx-engine-build-1"
+          }
+        },
+        "featured_collection_nV3NYP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "2002-2005-wrx-oil-system"
+          }
+        },
+        "featured_collection_xijzRn": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "2002-2005-wrx-fuel-system"
+          }
+        },
         "featured_collection_BrTcVq": {
           "type": "featured_collection",
           "settings": {
@@ -61,39 +85,15 @@
           "settings": {
             "collection": "2002-2005-wrx-cooling"
           }
-        },
-        "featured_collection_xijzRn": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "2002-2005-wrx-fuel-system"
-          }
-        },
-        "featured_collection_CFWVzX": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "2002-2005-wrx-engine-build-1"
-          }
-        },
-        "featured_collection_UaGxQm": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "2002-2005-wrx-engine-dress-up"
-          }
-        },
-        "featured_collection_nV3NYP": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "2002-2005-wrx-oil-system"
-          }
         }
       },
       "block_order": [
-        "featured_collection_BrTcVq",
-        "featured_collection_A6Ak8W",
-        "featured_collection_xijzRn",
-        "featured_collection_CFWVzX",
         "featured_collection_UaGxQm",
-        "featured_collection_nV3NYP"
+        "featured_collection_CFWVzX",
+        "featured_collection_nV3NYP",
+        "featured_collection_xijzRn",
+        "featured_collection_BrTcVq",
+        "featured_collection_A6Ak8W"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
