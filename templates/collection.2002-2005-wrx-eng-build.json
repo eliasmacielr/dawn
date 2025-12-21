@@ -50,29 +50,71 @@
     "collection_list_WLH3NC": {
       "type": "collection-list",
       "blocks": {
+        "featured_collection_9qUPw3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "2002-2005-wrx-gaskets-seals"
+          }
+        },
+        "featured_collection_mgqbq3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "2002-2005-wrx-engine-dress-up"
+          }
+        },
         "featured_collection_CFWVzX": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "2002-2005-wrx-short-blocks"
           }
         },
         "featured_collection_UaGxQm": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "2002-2005-wrx-long-blocks"
           }
         },
         "featured_collection_nV3NYP": {
           "type": "featured_collection",
           "settings": {
-            "collection": ""
+            "collection": "2002-2005-wrx-pistons"
+          }
+        },
+        "featured_collection_gkY4zx": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "2002-2005-wrx-rods"
+          }
+        },
+        "featured_collection_6kNeah": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "2002-2005-wrx-oil-system"
+          }
+        },
+        "featured_collection_JHfzzw": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "2002-2005-wrx-timing-components"
+          }
+        },
+        "featured_collection_k7VnGN": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "2002-2005-wrx-cams-gears"
           }
         }
       },
       "block_order": [
+        "featured_collection_9qUPw3",
+        "featured_collection_mgqbq3",
         "featured_collection_CFWVzX",
         "featured_collection_UaGxQm",
-        "featured_collection_nV3NYP"
+        "featured_collection_nV3NYP",
+        "featured_collection_gkY4zx",
+        "featured_collection_6kNeah",
+        "featured_collection_JHfzzw",
+        "featured_collection_k7VnGN"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
@@ -83,7 +125,7 @@
         "color_scheme": "",
         "show_view_all": false,
         "columns_mobile": "2",
-        "swipe_on_mobile": true,
+        "swipe_on_mobile": false,
         "padding_top": 20,
         "padding_bottom": 20
       }

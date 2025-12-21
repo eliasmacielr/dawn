@@ -12,7 +12,7 @@
     "banner": {
       "type": "main-collection-banner",
       "settings": {
-        "show_collection_description": true,
+        "show_collection_description": false,
         "show_collection_image": false,
         "read_more_text": "Read more",
         "read_less_text": "Read less",
@@ -21,12 +21,14 @@
     },
     "collection-tree": {
       "type": "main-collection-tree",
+      "disabled": true,
       "settings": {
         "link_primary_color": "#000000"
       }
     },
     "product-grid": {
       "type": "main-collection-product-grid",
+      "disabled": true,
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 5,
@@ -44,11 +46,53 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "collection_list_WLH3NC": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_CFWVzX": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_UaGxQm": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        },
+        "featured_collection_nV3NYP": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_CFWVzX",
+        "featured_collection_UaGxQm",
+        "featured_collection_nV3NYP"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "",
+        "show_view_all": false,
+        "columns_mobile": "2",
+        "swipe_on_mobile": true,
+        "padding_top": 20,
+        "padding_bottom": 20
+      }
     }
   },
   "order": [
     "banner",
     "collection-tree",
-    "product-grid"
+    "product-grid",
+    "collection_list_WLH3NC"
   ]
 }
