@@ -32,55 +32,37 @@
         "featured_collection_CFWVzX": {
           "type": "featured_collection",
           "settings": {
-            "collection": "2002-2005-wrx-short-blocks"
+            "collection": "headlights"
           }
         },
         "featured_collection_UaGxQm": {
           "type": "featured_collection",
           "settings": {
-            "collection": "2002-2005-wrx-long-blocks"
+            "collection": "interior-lighting"
           }
         },
         "featured_collection_nV3NYP": {
           "type": "featured_collection",
           "settings": {
-            "collection": "2002-2005-wrx-pistons"
+            "collection": "fog-lights"
           }
         },
         "featured_collection_gkY4zx": {
           "type": "featured_collection",
           "settings": {
-            "collection": "2002-2005-wrx-rods"
+            "collection": "marker-lights"
           }
         },
         "featured_collection_8e6Qea": {
           "type": "featured_collection",
           "settings": {
-            "collection": "2002-2005-wrx-engine-bearings"
+            "collection": "auxiliary-lighting"
           }
         },
         "featured_collection_9qUPw3": {
           "type": "featured_collection",
           "settings": {
-            "collection": "2002-2005-wrx-gaskets-seals"
-          }
-        },
-        "featured_collection_JHfzzw": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "2002-2005-wrx-timing-components"
-          }
-        },
-        "featured_collection_k7VnGN": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "2002-2005-wrx-cams-gears"
-          }
-        },
-        "featured_collection_BbgFxc": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": "2002-2005-wrx-valvetrain"
+            "collection": "tail-lights"
           }
         }
       },
@@ -90,10 +72,7 @@
         "featured_collection_nV3NYP",
         "featured_collection_gkY4zx",
         "featured_collection_8e6Qea",
-        "featured_collection_9qUPw3",
-        "featured_collection_JHfzzw",
-        "featured_collection_k7VnGN",
-        "featured_collection_BbgFxc"
+        "featured_collection_9qUPw3"
       ],
       "name": "t:sections.collection-list.presets.name",
       "settings": {
