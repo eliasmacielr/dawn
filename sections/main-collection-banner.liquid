@@ -70,11 +70,26 @@
     </div>
   </div>
 
+  {% assign collection_title = collection.title | escape %}
+  {% assign collection_title_underscore_split = collection_title | split: '_' %}
+  {% if collection_title_underscore_split.size > 1 %}
+    {% assign collection_title_maybe_year = collection_title_underscore_split[0] | plus: 0 | append: '' %}
+    {% if collection_title_underscore_split[0] == collection_title_maybe_year %}
+      {% assign collection_title_first_part = collection_title_underscore_split | slice: 0, 3 | join: ' ' %}
+      {% assign collection_title_second_part = collection_title_underscore_split | slice: -1, 1 | join: ' ' %}
+      {% assign collection_title = collection_title_first_part
+        | append: ' '
+        | append: collection_title_second_part
+        | escape
+      %}
+    {% endif %}
+  {% endif %}
+
   <div class="collection-hero__inner page-width {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <div class="collection-hero__text-wrapper">
       <h1 class="collection-hero__title">
         <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-        {{- collection.title | escape -}}
+        {{- collection_title -}}
       </h1>
 
       {%- if section.settings.show_collection_description and collection.description != blank -%}
