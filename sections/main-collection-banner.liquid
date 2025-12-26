@@ -77,6 +77,38 @@
     {% if collection_title_underscore_split[0] == collection_title_maybe_year %}
       {% assign collection_title_first_part = collection_title_underscore_split | slice: 0, 3 | join: ' ' %}
       {% assign collection_title_second_part = collection_title_underscore_split | slice: -1, 1 | join: ' ' %}
+      {%- comment -%} Split camelCase in collection_title_second_part {%- endcomment -%}
+      {%- if collection_title_second_part != blank -%}
+        {%- assign spaced_second_part = '' -%}
+        {%- assign chars = collection_title_second_part | split: '' -%}
+        {%- for char in chars -%}
+          {%- assign char_upcase = char | upcase -%}
+          {%- if char == char_upcase and forloop.index0 > 0 -%}
+            {%- assign spaced_second_part = spaced_second_part | append: ' ' -%}
+          {%- endif -%}
+          {%- assign spaced_second_part = spaced_second_part | append: char -%}
+        {%- endfor -%}
+        {%- assign words = spaced_second_part | split: ' ' -%}
+        {%- assign formatted_second_part = '' -%}
+        {%- for word in words -%}
+          {%- if word != blank -%}
+            {%- assign first_char = word | slice: 0, 1 | upcase -%}
+            {%- if word.size > 1 -%}
+              {%- assign rest_length = word.size | minus: 1 -%}
+              {%- assign rest_of_word = word | slice: 1, rest_length -%}
+              {%- assign capitalized_word = first_char | append: rest_of_word -%}
+            {%- else -%}
+              {%- assign capitalized_word = first_char -%}
+            {%- endif -%}
+            {%- if forloop.first -%}
+              {%- assign formatted_second_part = capitalized_word -%}
+            {%- else -%}
+              {%- assign formatted_second_part = formatted_second_part | append: ' ' | append: capitalized_word -%}
+            {%- endif -%}
+          {%- endif -%}
+        {%- endfor -%}
+        {%- assign collection_title_second_part = formatted_second_part -%}
+      {%- endif -%}
       {% assign collection_title = collection_title_first_part
         | append: ' '
         | append: collection_title_second_part
