@@ -10,69 +10,125 @@
 {%- endstyle -%}
 
 <div class="page-width">
-  {%- assign collection_tree_value = shop.metafields.collection_tree.collection_tree.value -%}
-  {%- assign nodes = collection_tree_value.nodes -%}
-  {%- assign collection_id = collection.id | append: '' -%}
+  {% comment %}
+    {%- assign collection_tree_value = shop.metafields.collection_tree.collection_tree.value -%}
+    {%- assign nodes = collection_tree_value.nodes -%}
+    {%- assign collection_id = collection.id | append: '' -%}
 
-  {%- if collection_tree_value.parentChildren[collection_id] -%}
-    <h3 class="collection-tree__title center">
-      {{ 'sections.collection_template.shop_upgrades_by_category' | t: collection_title: collection.title }}
-    </h3>
-  {%- endif -%}
+    {%- if collection_tree_value.parentChildren[collection_id] -%}
+      <h3 class="collection-tree__title center">
+        {{ 'sections.collection_template.shop_upgrades_by_category' | t: collection_title: collection.title }}
+      </h3>
+    {%- endif -%}
 
-  <div class="collection-tree__parent">
-    {% assign subcollections_ids = collection_tree_value.parentChildren[collection_id] %}
-    {%- for id in subcollections_ids -%}
-      {%- assign subcollection_id = id | append: '' -%}
-      {%- assign subcollection = nodes[subcollection_id] -%}
-      <div class="collection-tree__child center">
-        {%- if subcollection.i -%}
-          <a
-            href="{{ routes.collections_url }}/{{ collection.handle }}/{{ subcollection.h }}"
-            class="full-unstyled-link font-body-bold"
-          >
+    <div class="collection-tree__parent">
+      {% assign subcollections_ids = collection_tree_value.parentChildren[collection_id] %}
+      {%- for id in subcollections_ids -%}
+        {%- assign subcollection_id = id | append: '' -%}
+        {%- assign subcollection = nodes[subcollection_id] -%}
+        <div class="collection-tree__child center">
+          {%- if subcollection.i -%}
+            <a
+              href="{{ routes.collections_url }}/{{ collection.handle }}/{{ subcollection.h }}"
+              class="full-unstyled-link font-body-bold"
+            >
+              <img
+                src="{{ subcollection.i }}"
+                alt="{{ subcollection.t | escape }} image"
+                class="motion-reduce"
+                width="120"
+                height="120"
+              >
+            </a>
+          {%- endif -%}
+          {%- unless collection_tree_value.parentChildren[subcollection_id] -%}
+            <a
+              href="{{ routes.collections_url }}/{{ collection.handle }}/{{ subcollection.h }}"
+              class="full-unstyled-link font-body-bold"
+            >
+              {{- subcollection.t -}}
+            </a>
+          {%- else -%}
+            <p class="subcollection__title font-body-bold">{{ subcollection.t }}</p>
+            <div
+              class="collection-tree__grandchildren center"
+              style="--link-primary-color: {{ section.settings.link_primary_color }}"
+            >
+              {%- for child_id in collection_tree_value.parentChildren[subcollection_id] limit: 5 -%}
+                {%- assign child_collection = nodes[child_id] -%}
+                <a
+                  href="{{ routes.collections_url }}/{{ collection.handle }}/{{ subcollection.h }}/{{ child_collection.h }}"
+                  class="full-unstyled-link"
+                >
+                  {{- child_collection.t -}}
+                </a>
+              {%- endfor -%}
+            </div>
+            <a
+              href="{{ routes.collections_url }}/{{ collection.handle }}/{{ subcollection.h }}"
+              class="full-unstyled-link font-body-bold"
+              >Shop All</a
+            >
+          {%- endunless -%}
+          {% comment %} {{ collection_tree_value.parentChildren[subcollection_id] }} {% endcomment %}
+        </div>
+      {%- endfor -%}
+    </div>
+  {% endcomment %}
+
+  {%- assign subcollections = collection.metafields.custom.subcollections.value -%}
+  {%- if subcollections != blank -%}
+    <div class="collection-tree__parent">
+      {%- for subcollection in subcollections -%}
+        <div class="collection-tree__child center">
+          <a href="{{ subcollection.url }}" class="full-unstyled-link font-body-bold">
             <img
-              src="{{ subcollection.i }}"
-              alt="{{ subcollection.t | escape }} image"
+              src="{{ subcollection.featured_image | image_url: width: 120 }}"
+              alt="{{ subcollection.title }}"
               class="motion-reduce"
               width="120"
               height="120"
             >
+            {% assign subcollection_title = subcollection.title | escape %}
+            {% assign subcollection_title_underscore_split = subcollection_title | split: '_' %}
+            {% if subcollection_title_underscore_split.size > 1 %}
+              {% assign subcollection_title = subcollection_title_underscore_split | slice: -1, 1 | join: ' ' %}
+            {% else %}
+              {% assign subcollection_title = subcollection.title | escape %}
+            {% endif %}
+            <p class="subcollection__title font-body-bold">{{ subcollection_title }}</p>
           </a>
-        {%- endif -%}
-        {%- unless collection_tree_value.parentChildren[subcollection_id] -%}
-          <a
-            href="{{ routes.collections_url }}/{{ collection.handle }}/{{ subcollection.h }}"
-            class="full-unstyled-link font-body-bold"
-          >
-            {{- subcollection.t -}}
-          </a>
-        {%- else -%}
-          <p class="subcollection__title font-body-bold">{{ subcollection.t }}</p>
-          <div
-            class="collection-tree__grandchildren center"
-            style="--link-primary-color: {{ section.settings.link_primary_color }}"
-          >
-            {%- for child_id in collection_tree_value.parentChildren[subcollection_id] limit: 5 -%}
-              {%- assign child_collection = nodes[child_id] -%}
-              <a
-                href="{{ routes.collections_url }}/{{ collection.handle }}/{{ subcollection.h }}/{{ child_collection.h }}"
-                class="full-unstyled-link"
-              >
-                {{- child_collection.t -}}
-              </a>
-            {%- endfor -%}
-          </div>
-          <a
-            href="{{ routes.collections_url }}/{{ collection.handle }}/{{ subcollection.h }}"
-            class="full-unstyled-link font-body-bold"
-            >Shop All</a
-          >
-        {%- endunless -%}
-        {% comment %} {{ collection_tree_value.parentChildren[subcollection_id] }} {% endcomment %}
-      </div>
-    {%- endfor -%}
-  </div>
+          {% comment %} Now for the subcollections of this subcollection {% endcomment %}
+          {%- assign subcollections_of_subcollection = subcollection.metafields.custom.subcollections.value -%}
+          {%- if subcollections_of_subcollection != blank -%}
+            <div
+              class="collection-tree__grandchildren center"
+              style="--link-primary-color: {{ section.settings.link_primary_color }}"
+            >
+              {%- for subcollection_of_subcollection in subcollections_of_subcollection -%}
+                <a href="{{ subcollection_of_subcollection.url }}" class="full-unstyled-link">
+                  {% assign subcollection_of_subcollection_title = subcollection_of_subcollection.title | escape %}
+                  {% assign subcollection_of_subcollection_title_underscore_split = subcollection_of_subcollection_title
+                    | split: '_'
+                  %}
+                  {% if subcollection_of_subcollection_title_underscore_split.size > 1 %}
+                    {% assign subcollection_of_subcollection_title = subcollection_of_subcollection_title_underscore_split
+                      | slice: -1, 1
+                      | join: ' '
+                    %}
+                  {% else %}
+                    {% assign subcollection_of_subcollection_title = subcollection_of_subcollection.title | escape %}
+                  {% endif %}
+                  {{- subcollection_of_subcollection_title | escape -}}
+                </a>
+              {%- endfor -%}
+            </div>
+            <a href="{{ subcollection.url }}" class="full-unstyled-link font-body-bold">Shop All</a>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
 </div>
 
 {% schema %}
