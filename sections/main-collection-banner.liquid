@@ -52,6 +52,10 @@
   .collection__tags {
     padding-top: 2rem;
   }
+
+  .breadcrumbs.processing {
+    visibility: hidden;
+  }
 {%- endstyle -%}
 
 {% assign collection_title = collection.title | escape %}
@@ -107,7 +111,7 @@
   <div class="collection__tags page-width" style="white-space: nowrap;">
     {%- assign level_1_collection = collection.metafields.custom.level_1.value -%}
     {%- assign level_2_collection = collection.metafields.custom.level_2.value -%}
-    <div class="breadcrumbs">
+    <div class="breadcrumbs processing">
       <a href="/collections" class="full-unstyled-link">Collections</a>
       {%- if collection_is_for_fitments -%}
         {% comment %} Split the handle in underscores {% endcomment %}
@@ -115,13 +119,21 @@
         {% comment %} Add a link to 0,4 of the handle split {% endcomment %}
         {%- if handle_underscore_split.size > 4 -%}
           /
-          <a href="{{ handle_underscore_split | slice: 0, 4 | join: '_' }}" class="full-unstyled-link">
+          <a
+            href="{{ handle_underscore_split | slice: 0, 4 | join: '_' }}"
+            class="full-unstyled-link"
+            data-camel-case-text="{{- collection_title_underscore_split | slice: 3, 1 | join: ' ' -}}"
+          >
             {{- collection_title_underscore_split | slice: 3, 1 | join: ' ' -}}
           </a>
         {%- endif -%}
         {%- if handle_underscore_split.size > 5 -%}
           /
-          <a href="{{ handle_underscore_split | slice: 0, 5 | join: '_' }}" class="full-unstyled-link">
+          <a
+            href="{{ handle_underscore_split | slice: 0, 5 | join: '_' }}"
+            class="full-unstyled-link"
+            data-camel-case-text="{{- collection_title_underscore_split | slice: 4, 1 | join: ' ' -}}"
+          >
             {{- collection_title_underscore_split | slice: 4, 1 | join: ' ' -}}
           </a>
         {%- endif -%}
@@ -193,6 +205,29 @@
       button.textContent = '{{ section.settings.read_more_text | default: "Read more" }}';
     }
   }
+
+  function splitCamelCase(str) {
+    return str.replace(/([a-z])([A-Z])/g, '$1 $2');
+  }
+
+  // Process camelCase text on page load
+  document.addEventListener('DOMContentLoaded', function () {
+    const breadcrumbs = document.querySelector('.breadcrumbs');
+    const camelCaseElements = document.querySelectorAll('[data-camel-case-text]');
+
+    camelCaseElements.forEach(function (element) {
+      const originalText = element.getAttribute('data-camel-case-text');
+      if (originalText) {
+        const splitText = splitCamelCase(originalText);
+        element.textContent = splitText;
+      }
+    });
+
+    // Show breadcrumbs after processing
+    if (breadcrumbs) {
+      breadcrumbs.classList.remove('processing');
+    }
+  });
 </script>
 
 {% schema %}
