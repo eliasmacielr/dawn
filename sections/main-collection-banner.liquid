@@ -56,15 +56,17 @@
 
 {% assign collection_title = collection.title | escape %}
 {% assign collection_title_underscore_split = collection_title | split: '_' %}
+{% assign collection_is_for_fitments = false %}
 {% if collection_title_underscore_split.size > 1 %}
   {% assign collection_title_maybe_year = collection_title_underscore_split[0] | plus: 0 | append: '' %}
   {% if collection_title_underscore_split[0] == collection_title_maybe_year %}
-    {% assign collection_title_first_part = collection_title_underscore_split | slice: 0, 3 | join: ' ' %}
-    {% assign collection_title_second_part = collection_title_underscore_split | slice: -1, 1 | join: ' ' %}
-    {%- comment -%} Split camelCase in collection_title_second_part {%- endcomment -%}
-    {%- if collection_title_second_part != blank -%}
+    {% assign collection_is_for_fitments = true %}
+    {% assign collection_title_ymm_part = collection_title_underscore_split | slice: 0, 3 | join: ' ' %}
+    {% assign collection_title_collections_part = collection_title_underscore_split | slice: -1, 1 | join: ' ' %}
+    {%- comment -%} Split camelCase in collection_title_collections_part {%- endcomment -%}
+    {%- if collection_title_collections_part != blank -%}
       {%- assign spaced_second_part = '' -%}
-      {%- assign chars = collection_title_second_part | split: '' -%}
+      {%- assign chars = collection_title_collections_part | split: '' -%}
       {%- for char in chars -%}
         {%- assign char_upcase = char | upcase -%}
         {%- if char == char_upcase and forloop.index0 > 0 -%}
@@ -91,11 +93,11 @@
           {%- endif -%}
         {%- endif -%}
       {%- endfor -%}
-      {%- assign collection_title_second_part = formatted_second_part -%}
+      {%- assign collection_title_collections_part = formatted_second_part -%}
     {%- endif -%}
-    {% assign collection_title = collection_title_first_part
+    {% assign collection_title = collection_title_ymm_part
       | append: ' '
-      | append: collection_title_second_part
+      | append: collection_title_collections_part
       | escape
     %}
   {% endif %}
@@ -106,14 +108,32 @@
     {%- assign level_1_collection = collection.metafields.custom.level_1.value -%}
     {%- assign level_2_collection = collection.metafields.custom.level_2.value -%}
     <div class="breadcrumbs">
-      <a href="/collections" class="full-unstyled-link">Collections</a> /
-      {%- if level_1_collection != blank -%}
-        <a href="{{ level_1_collection.url }}" class="full-unstyled-link">{{ level_1_collection.title }}</a> /
+      <a href="/collections" class="full-unstyled-link">Collections</a>
+      {%- if collection_is_for_fitments -%}
+        {% comment %} Split the handle in underscores {% endcomment %}
+        {% assign handle_underscore_split = collection.handle | split: '_' %}
+        {% comment %} Add a link to 0,4 of the handle split {% endcomment %}
+        {%- if handle_underscore_split.size > 4 -%}
+          /
+          <a href="{{ handle_underscore_split | slice: 0, 4 | join: '_' }}" class="full-unstyled-link">
+            {{- collection_title_underscore_split | slice: 3, 1 | join: ' ' -}}
+          </a>
+        {%- endif -%}
+        {%- if handle_underscore_split.size > 5 -%}
+          /
+          <a href="{{ handle_underscore_split | slice: 0, 5 | join: '_' }}" class="full-unstyled-link">
+            {{- collection_title_underscore_split | slice: 4, 1 | join: ' ' -}}
+          </a>
+        {%- endif -%}
+      {%- else -%}
+        {%- if level_1_collection != blank -%}
+          <a href="{{ level_1_collection.url }}" class="full-unstyled-link">{{ level_1_collection.title }}</a> /
+        {%- endif -%}
+        {%- if level_2_collection != blank -%}
+          <a href="{{ level_2_collection.url }}" class="full-unstyled-link">{{ level_2_collection.title }}</a> /
+        {%- endif -%}
+        <a href="{{ collection.url }}" class="full-unstyled-link">{{ collection_title }}</a>
       {%- endif -%}
-      {%- if level_2_collection != blank -%}
-        <a href="{{ level_2_collection.url }}" class="full-unstyled-link">{{ level_2_collection.title }}</a> /
-      {%- endif -%}
-      <a href="{{ collection.url }}" class="full-unstyled-link">{{ collection_title }}</a>
     </div>
   </div>
 
