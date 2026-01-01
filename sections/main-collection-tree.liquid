@@ -88,111 +88,115 @@
     {%- if subcollections != blank -%}
       <div class="collection-tree__parent">
         {%- for subcollection in subcollections -%}
-          <div class="collection-tree__child center">
-            <a href="{{ subcollection.url }}" class="full-unstyled-link font-body-bold">
-              <img
-                src="{{ subcollection.featured_image | image_url: width: 120 }}"
-                alt="{{ subcollection.title }}"
-                class="motion-reduce"
-                width="120"
-                height="120"
-              >
-              {% assign subcollection_title = subcollection.title | escape %}
-              {% assign subcollection_title_underscore_split = subcollection_title | split: '_' %}
-              {% if subcollection_title_underscore_split.size > 1 %}
-                {% assign subcollection_title = subcollection_title_underscore_split | slice: -1, 1 | join: ' ' %}
-                {%- comment -%} Split camelCase in subcollection_title {%- endcomment -%}
-                {%- assign spaced_title = '' -%}
-                {%- assign chars = subcollection_title | split: '' -%}
-                {%- for char in chars -%}
-                  {%- assign char_upcase = char | upcase -%}
-                  {%- if char == char_upcase and forloop.index0 > 0 -%}
-                    {%- assign spaced_title = spaced_title | append: ' ' -%}
-                  {%- endif -%}
-                  {%- assign spaced_title = spaced_title | append: char -%}
-                {%- endfor -%}
-                {%- assign words = spaced_title | split: ' ' -%}
-                {%- assign formatted_title = '' -%}
-                {%- for word in words -%}
-                  {%- if word != blank -%}
-                    {%- assign first_char = word | slice: 0, 1 | upcase -%}
-                    {%- if word.size > 1 -%}
-                      {%- assign rest_length = word.size | minus: 1 -%}
-                      {%- assign rest_of_word = word | slice: 1, rest_length -%}
-                      {%- assign capitalized_word = first_char | append: rest_of_word -%}
-                    {%- else -%}
-                      {%- assign capitalized_word = first_char -%}
-                    {%- endif -%}
-                    {%- if forloop.first -%}
-                      {%- assign formatted_title = capitalized_word -%}
-                    {%- else -%}
-                      {%- assign formatted_title = formatted_title | append: ' ' | append: capitalized_word -%}
-                    {%- endif -%}
-                  {%- endif -%}
-                {%- endfor -%}
-              {% else %}
+          {%- if subcollection.all_products_count > 0 -%}
+            <div class="collection-tree__child center">
+              <a href="{{ subcollection.url }}" class="full-unstyled-link font-body-bold">
                 {% assign subcollection_title = subcollection.title | escape %}
-              {% endif %}
-              <p class="subcollection__title font-body-bold">{{ formatted_title }}</p>
-            </a>
-            {% comment %} Now for the subcollections of this subcollection {% endcomment %}
-            {%- assign subcollections_of_subcollection = subcollection.metafields.custom.subcollections.value -%}
-            {%- if subcollections_of_subcollection != blank -%}
-              <div
-                class="collection-tree__grandchildren center"
-                style="--link-primary-color: {{ section.settings.link_primary_color }}"
-              >
-                {%- for subcollection_of_subcollection in subcollections_of_subcollection -%}
-                  <a href="{{ subcollection_of_subcollection.url }}" class="full-unstyled-link">
-                    {% assign subcollection_of_subcollection_title = subcollection_of_subcollection.title | escape %}
-                    {% assign subcollection_of_subcollection_title_underscore_split = subcollection_of_subcollection_title
-                      | split: '_'
-                    %}
-                    {% if subcollection_of_subcollection_title_underscore_split.size > 1 %}
-                      {% assign subcollection_of_subcollection_title = subcollection_of_subcollection_title_underscore_split
-                        | slice: -1, 1
-                        | join: ' '
-                      %}
-                      {%- comment -%} Split camelCase in subcollection_of_subcollection_title {%- endcomment -%}
-                      {%- assign spaced_title = '' -%}
-                      {%- assign chars = subcollection_of_subcollection_title | split: '' -%}
-                      {%- for char in chars -%}
-                        {%- assign char_upcase = char | upcase -%}
-                        {%- if char == char_upcase and forloop.index0 > 0 -%}
-                          {%- assign spaced_title = spaced_title | append: ' ' -%}
-                        {%- endif -%}
-                        {%- assign spaced_title = spaced_title | append: char -%}
-                      {%- endfor -%}
-                      {%- assign words = spaced_title | split: ' ' -%}
-                      {%- assign formatted_title = '' -%}
-                      {%- for word in words -%}
-                        {%- if word != blank -%}
-                          {%- assign first_char = word | slice: 0, 1 | upcase -%}
-                          {%- if word.size > 1 -%}
-                            {%- assign rest_length = word.size | minus: 1 -%}
-                            {%- assign rest_of_word = word | slice: 1, rest_length -%}
-                            {%- assign capitalized_word = first_char | append: rest_of_word -%}
-                          {%- else -%}
-                            {%- assign capitalized_word = first_char -%}
-                          {%- endif -%}
-                          {%- if forloop.first -%}
-                            {%- assign formatted_title = capitalized_word -%}
-                          {%- else -%}
-                            {%- assign formatted_title = formatted_title | append: ' ' | append: capitalized_word -%}
-                          {%- endif -%}
-                        {%- endif -%}
-                      {%- endfor -%}
-                      {%- assign subcollection_of_subcollection_title = formatted_title -%}
-                    {% else %}
-                      {% assign subcollection_of_subcollection_title = subcollection_of_subcollection.title | escape %}
-                    {% endif %}
-                    {{- formatted_title | escape -}}
-                  </a>
-                {%- endfor -%}
-              </div>
-              <a href="{{ subcollection.url }}" class="full-unstyled-link font-body-bold">Shop All</a>
-            {%- endif -%}
-          </div>
+                {% assign subcollection_title_underscore_split = subcollection_title | split: '_' %}
+                {% if subcollection_title_underscore_split.size > 1 %}
+                  {% assign subcollection_title = subcollection_title_underscore_split | slice: -1, 1 | join: ' ' %}
+                  {%- comment -%} Split camelCase in subcollection_title {%- endcomment -%}
+                  {%- assign spaced_title = '' -%}
+                  {%- assign chars = subcollection_title | split: '' -%}
+                  {%- for char in chars -%}
+                    {%- assign char_upcase = char | upcase -%}
+                    {%- if char == char_upcase and forloop.index0 > 0 -%}
+                      {%- assign spaced_title = spaced_title | append: ' ' -%}
+                    {%- endif -%}
+                    {%- assign spaced_title = spaced_title | append: char -%}
+                  {%- endfor -%}
+                  {%- assign words = spaced_title | split: ' ' -%}
+                  {%- assign formatted_title = '' -%}
+                  {%- for word in words -%}
+                    {%- if word != blank -%}
+                      {%- assign first_char = word | slice: 0, 1 | upcase -%}
+                      {%- if word.size > 1 -%}
+                        {%- assign rest_length = word.size | minus: 1 -%}
+                        {%- assign rest_of_word = word | slice: 1, rest_length -%}
+                        {%- assign capitalized_word = first_char | append: rest_of_word -%}
+                      {%- else -%}
+                        {%- assign capitalized_word = first_char -%}
+                      {%- endif -%}
+                      {%- if forloop.first -%}
+                        {%- assign formatted_title = capitalized_word -%}
+                      {%- else -%}
+                        {%- assign formatted_title = formatted_title | append: ' ' | append: capitalized_word -%}
+                      {%- endif -%}
+                    {%- endif -%}
+                  {%- endfor -%}
+                {% else %}
+                  {% assign subcollection_title = subcollection.title | escape %}
+                {% endif %}
+                <p class="subcollection__title font-body-bold">{{ formatted_title }}</p>
+              </a>
+              {% comment %} Now for the subcollections of this subcollection {% endcomment %}
+              {%- assign subcollections_of_subcollection = subcollection.metafields.custom.subcollections.value -%}
+              {%- if subcollections_of_subcollection != blank -%}
+                <div
+                  class="collection-tree__grandchildren center"
+                  style="--link-primary-color: {{ section.settings.link_primary_color }}"
+                >
+                  {%- for subcollection_of_subcollection in subcollections_of_subcollection -%}
+                    {%- if subcollection_of_subcollection.all_products_count > 0 -%}
+                      <a href="{{ subcollection_of_subcollection.url }}" class="full-unstyled-link">
+                        {% assign subcollection_of_subcollection_title = subcollection_of_subcollection.title
+                          | escape
+                        %}
+                        {% assign subcollection_of_subcollection_title_underscore_split = subcollection_of_subcollection_title
+                          | split: '_'
+                        %}
+                        {% if subcollection_of_subcollection_title_underscore_split.size > 1 %}
+                          {% assign subcollection_of_subcollection_title = subcollection_of_subcollection_title_underscore_split
+                            | slice: -1, 1
+                            | join: ' '
+                          %}
+                          {%- comment -%} Split camelCase in subcollection_of_subcollection_title {%- endcomment -%}
+                          {%- assign spaced_title = '' -%}
+                          {%- assign chars = subcollection_of_subcollection_title | split: '' -%}
+                          {%- for char in chars -%}
+                            {%- assign char_upcase = char | upcase -%}
+                            {%- if char == char_upcase and forloop.index0 > 0 -%}
+                              {%- assign spaced_title = spaced_title | append: ' ' -%}
+                            {%- endif -%}
+                            {%- assign spaced_title = spaced_title | append: char -%}
+                          {%- endfor -%}
+                          {%- assign words = spaced_title | split: ' ' -%}
+                          {%- assign formatted_title = '' -%}
+                          {%- for word in words -%}
+                            {%- if word != blank -%}
+                              {%- assign first_char = word | slice: 0, 1 | upcase -%}
+                              {%- if word.size > 1 -%}
+                                {%- assign rest_length = word.size | minus: 1 -%}
+                                {%- assign rest_of_word = word | slice: 1, rest_length -%}
+                                {%- assign capitalized_word = first_char | append: rest_of_word -%}
+                              {%- else -%}
+                                {%- assign capitalized_word = first_char -%}
+                              {%- endif -%}
+                              {%- if forloop.first -%}
+                                {%- assign formatted_title = capitalized_word -%}
+                              {%- else -%}
+                                {%- assign formatted_title = formatted_title
+                                  | append: ' '
+                                  | append: capitalized_word
+                                -%}
+                              {%- endif -%}
+                            {%- endif -%}
+                          {%- endfor -%}
+                          {%- assign subcollection_of_subcollection_title = formatted_title -%}
+                        {% else %}
+                          {% assign subcollection_of_subcollection_title = subcollection_of_subcollection.title
+                            | escape
+                          %}
+                        {% endif %}
+                        {{- formatted_title | escape -}}
+                      </a>
+                    {%- endif -%}
+                  {%- endfor -%}
+                </div>
+                <a href="{{ subcollection.url }}" class="full-unstyled-link font-body-bold">Shop All</a>
+              {%- endif -%}
+            </div>
+          {%- endif -%}
         {%- endfor -%}
       </div>
     {%- endif -%}
