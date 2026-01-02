@@ -64,7 +64,7 @@
           "settings": {
             "image": "shopify://shop_images/dev-nav-subaru-sti.jpg",
             "heading": "Quick links",
-            "menu": "subaru-sti",
+            "menu": "subaru-stic",
             "sidebar_image": "shopify://shop_images/dev-nav-subaru-sti.jpg"
           }
         },
@@ -73,7 +73,7 @@
           "settings": {
             "image": "shopify://shop_images/dev-nav-subaru-wrx.jpg",
             "heading": "Quick links",
-            "menu": "subaru-wrx",
+            "menu": "subaru-wrxc",
             "sidebar_image": "shopify://shop_images/dev-nav-subaru-wrx.jpg"
           }
         },
@@ -82,7 +82,7 @@
           "settings": {
             "image": "shopify://shop_images/dev-nav-subaru-brz.jpg",
             "heading": "Quick links",
-            "menu": "subaru-brz",
+            "menu": "subaru-brz-collections",
             "sidebar_image": "shopify://shop_images/dev-nav-subaru-brz.jpg"
           }
         },
@@ -91,7 +91,7 @@
           "settings": {
             "image": "shopify://shop_images/dev-nav-scion-frs.jpg",
             "heading": "Quick links",
-            "menu": "scion-frs",
+            "menu": "scion-fsr-collections",
             "sidebar_image": "shopify://shop_images/dev-nav-scion-frs.jpg"
           }
         },
@@ -100,7 +100,7 @@
           "settings": {
             "image": "shopify://shop_images/dev-nav-toyota-86.jpg",
             "heading": "Quick links",
-            "menu": "toyota-86",
+            "menu": "toyota-86-collections",
             "sidebar_image": "shopify://shop_images/dev-nav-toyota-86.jpg"
           }
         },
@@ -109,7 +109,7 @@
           "settings": {
             "image": "shopify://shop_images/dev-nav-toyota-gr86.jpg",
             "heading": "Quick links",
-            "menu": "toyota-gr86",
+            "menu": "toyota-gr86-collections",
             "sidebar_image": "shopify://shop_images/dev-nav-toyota-gr86.jpg"
           }
         },
@@ -118,7 +118,7 @@
           "settings": {
             "image": "shopify://shop_images/honda_civic_type_r.png",
             "heading": "Quick links",
-            "menu": "honda-civic",
+            "menu": "honda-civic-collections",
             "sidebar_image": "shopify://shop_images/honda_civic_type_r.png"
           }
         }
