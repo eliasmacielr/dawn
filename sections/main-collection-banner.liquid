@@ -156,7 +156,10 @@
         {{- collection_title -}}
       </h1>
 
-      {%- if section.settings.show_collection_description and collection.description != blank -%}
+      {%- if section.settings.show_collection_description
+        and collection.description != blank
+        and collection_is_for_fitments == false
+      -%}
         <div class="collection-description truncated" id="collection-description">
           {{ collection.description }}
         </div>
