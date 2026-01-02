@@ -91,6 +91,13 @@
           {%- if subcollection.all_products_count > 0 -%}
             <div class="collection-tree__child center">
               <a href="{{ subcollection.url }}" class="full-unstyled-link font-body-bold">
+                <img
+                  src="{{ subcollection.featured_image | image_url: width: 120 }}"
+                  alt="{{ subcollection.title | escape }} image"
+                  class="motion-reduce"
+                  width="120"
+                  height="120"
+                >
                 {% assign subcollection_title = subcollection.title | escape %}
                 {% assign subcollection_title_underscore_split = subcollection_title | split: '_' %}
                 {% if subcollection_title_underscore_split.size > 1 %}
